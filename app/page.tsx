@@ -1,6 +1,6 @@
 "use client";
 
-// import PropertySearch from "@/components/PropertySearch";
+import PropertySearch from "@/components/PropertySearch";
 import { Button } from "@/components/ui/button";
 import { useRef } from "react";
 
@@ -24,7 +24,9 @@ export default function Home() {
         </Button>
       </div>
 
-      <div ref={targetRef}>{/* <PropertySearch /> */}</div>
+      <div ref={targetRef}>
+        <PropertySearch />
+      </div>
     </main>
   );
 }

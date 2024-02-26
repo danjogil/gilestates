@@ -20,7 +20,12 @@ import {
 
 import { Button } from "@/components/ui/button";
 
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import {
+  Sheet,
+  SheetClose,
+  SheetContent,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 import { HamburgerMenuIcon } from "@radix-ui/react-icons";
 import { cn } from "@/lib/utils";
 import { ScrollArea } from "./ui/scroll-area";
@@ -172,12 +177,16 @@ export function MainNav({ children }: { children: React.ReactNode }) {
               <NavigationMenu className="max-w-full">
                 <NavigationMenuList className="flex flex-col gap-4 justify-center items-center">
                   <NavigationMenuItem className="mt-16">
-                    <Button
-                      variant="ghost"
-                      className="text-xl font-semibold w-[15rem]"
-                    >
-                      Home
-                    </Button>
+                    <SheetClose asChild>
+                      <Link href="/">
+                        <Button
+                          variant="ghost"
+                          className="text-xl font-semibold w-[15rem]"
+                        >
+                          Home
+                        </Button>
+                      </Link>
+                    </SheetClose>
                   </NavigationMenuItem>
                   <NavigationMenuItem>
                     <Collapsible className="flex flex-col">
@@ -187,18 +196,46 @@ export function MainNav({ children }: { children: React.ReactNode }) {
                         </NavigationMenuTrigger>
                       </CollapsibleTrigger>
                       <CollapsibleContent className="flex flex-col">
-                        <Button variant="ghost" className="text-lg mt-2">
-                          Homes for sale
-                        </Button>
-                        <Button variant="ghost" className="text-lg">
-                          Long term rentals
-                        </Button>
-                        <Button variant="ghost" className="text-lg">
-                          Developments
-                        </Button>
-                        <Button variant="ghost" className="text-lg">
-                          Latest listings
-                        </Button>
+                        <SheetClose asChild>
+                          <Link href="/properties/for-sale">
+                            <Button
+                              variant="ghost"
+                              className="text-lg mt-2 w-[15rem]"
+                            >
+                              Homes for sale
+                            </Button>
+                          </Link>
+                        </SheetClose>
+                        <SheetClose asChild>
+                          <Link href="/properties/for-rent">
+                            <Button
+                              variant="ghost"
+                              className="text-lg w-[15rem]"
+                            >
+                              Long term rentals
+                            </Button>
+                          </Link>
+                        </SheetClose>
+                        <SheetClose asChild>
+                          <Link href="/properties/developments">
+                            <Button
+                              variant="ghost"
+                              className="text-lg w-[15rem]"
+                            >
+                              Developments
+                            </Button>
+                          </Link>
+                        </SheetClose>
+                        <SheetClose asChild>
+                          <Link href="/properties/latest-listings">
+                            <Button
+                              variant="ghost"
+                              className="text-lg w-[15rem]"
+                            >
+                              Latest Listings
+                            </Button>
+                          </Link>
+                        </SheetClose>
                       </CollapsibleContent>
                     </Collapsible>
                   </NavigationMenuItem>
@@ -210,18 +247,46 @@ export function MainNav({ children }: { children: React.ReactNode }) {
                         </NavigationMenuTrigger>
                       </CollapsibleTrigger>
                       <CollapsibleContent className="flex flex-col">
-                        <Button variant="ghost" className="text-lg mt-2">
-                          Marbella
-                        </Button>
-                        <Button variant="ghost" className="text-lg">
-                          East Marbella
-                        </Button>
-                        <Button variant="ghost" className="text-lg">
-                          Benahavis
-                        </Button>
-                        <Button variant="ghost" className="text-lg">
-                          Estepona
-                        </Button>
+                        <SheetClose asChild>
+                          <Link href="/areas/marbella">
+                            <Button
+                              variant="ghost"
+                              className="text-lg w-[15rem] mt-2"
+                            >
+                              Marbella
+                            </Button>
+                          </Link>
+                        </SheetClose>
+                        <SheetClose asChild>
+                          <Link href="/areas/east-marbella">
+                            <Button
+                              variant="ghost"
+                              className="text-lg w-[15rem]"
+                            >
+                              East Marbella
+                            </Button>
+                          </Link>
+                        </SheetClose>
+                        <SheetClose asChild>
+                          <Link href="/areas/benahavis">
+                            <Button
+                              variant="ghost"
+                              className="text-lg w-[15rem]"
+                            >
+                              Benahavis
+                            </Button>
+                          </Link>
+                        </SheetClose>
+                        <SheetClose asChild>
+                          <Link href="/areas/estepona">
+                            <Button
+                              variant="ghost"
+                              className="text-lg w-[15rem]"
+                            >
+                              Estepona
+                            </Button>
+                          </Link>
+                        </SheetClose>
                       </CollapsibleContent>
                     </Collapsible>
                   </NavigationMenuItem>
@@ -233,18 +298,46 @@ export function MainNav({ children }: { children: React.ReactNode }) {
                         </NavigationMenuTrigger>
                       </CollapsibleTrigger>
                       <CollapsibleContent className=" flex flex-col">
-                        <Button variant="ghost" className="text-lg mt-2">
-                          Legal services
-                        </Button>
-                        <Button variant="ghost" className="text-lg">
-                          Property management
-                        </Button>
-                        <Button variant="ghost" className="text-lg">
-                          Refurbishments
-                        </Button>
-                        <Button variant="ghost" className="text-lg">
-                          Interior design
-                        </Button>
+                        <SheetClose asChild>
+                          <Link href="/services/legal-service">
+                            <Button
+                              variant="ghost"
+                              className="text-lg w-[15rem] mt-2"
+                            >
+                              Legal services
+                            </Button>
+                          </Link>
+                        </SheetClose>
+                        <SheetClose asChild>
+                          <Link href="/services/property-management">
+                            <Button
+                              variant="ghost"
+                              className="text-lg w-[15rem]"
+                            >
+                              Property management
+                            </Button>
+                          </Link>
+                        </SheetClose>
+                        <SheetClose asChild>
+                          <Link href="/services/refurbishments">
+                            <Button
+                              variant="ghost"
+                              className="text-lg w-[15rem]"
+                            >
+                              Refurbishments
+                            </Button>
+                          </Link>
+                        </SheetClose>
+                        <SheetClose asChild>
+                          <Link href="/services/interior-design">
+                            <Button
+                              variant="ghost"
+                              className="text-lg w-[15rem]"
+                            >
+                              Interior Design
+                            </Button>
+                          </Link>
+                        </SheetClose>
                       </CollapsibleContent>
                     </Collapsible>
                   </NavigationMenuItem>
@@ -256,28 +349,60 @@ export function MainNav({ children }: { children: React.ReactNode }) {
                         </NavigationMenuTrigger>
                       </CollapsibleTrigger>
                       <CollapsibleContent className=" flex flex-col">
-                        <Button variant="ghost" className="text-lg mt-2">
-                          FAQs
-                        </Button>
-                        <Button variant="ghost" className="text-lg">
-                          Seller&apos;s guide
-                        </Button>
-                        <Button variant="ghost" className="text-lg">
-                          Buyer&apos;s guide
-                        </Button>
-                        <Button variant="ghost" className="text-lg">
-                          Schools
-                        </Button>
+                        <SheetClose asChild>
+                          <Link href="/property-advice/faqs">
+                            <Button
+                              variant="ghost"
+                              className="text-lg w-[15rem] mt-2"
+                            >
+                              FAQs
+                            </Button>
+                          </Link>
+                        </SheetClose>
+                        <SheetClose asChild>
+                          <Link href="/property-advice/sellers-guide">
+                            <Button
+                              variant="ghost"
+                              className="text-lg w-[15rem]"
+                            >
+                              Seller&apos;s guide
+                            </Button>
+                          </Link>
+                        </SheetClose>
+                        <SheetClose asChild>
+                          <Link href="/property-advice/buyers-guide">
+                            <Button
+                              variant="ghost"
+                              className="text-lg w-[15rem]"
+                            >
+                              Buyer&apos;s guide
+                            </Button>
+                          </Link>
+                        </SheetClose>
+                        <SheetClose asChild>
+                          <Link href="/property-advice/schools">
+                            <Button
+                              variant="ghost"
+                              className="text-lg w-[15rem]"
+                            >
+                              Schools
+                            </Button>
+                          </Link>
+                        </SheetClose>
                       </CollapsibleContent>
                     </Collapsible>
                   </NavigationMenuItem>
                   <NavigationMenuItem>
-                    <Button
-                      variant="ghost"
-                      className="text-xl font-semibold w-[15rem]"
-                    >
-                      Contact
-                    </Button>
+                    <SheetClose asChild>
+                      <Link href="/contact">
+                        <Button
+                          variant="ghost"
+                          className="text-xl font-semibold w-[15rem]"
+                        >
+                          Contact
+                        </Button>
+                      </Link>
+                    </SheetClose>
                   </NavigationMenuItem>
                 </NavigationMenuList>
               </NavigationMenu>

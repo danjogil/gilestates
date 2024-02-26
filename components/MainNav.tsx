@@ -9,6 +9,7 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
+  navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 
 import {
@@ -23,6 +24,7 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { HamburgerMenuIcon } from "@radix-ui/react-icons";
 import { cn } from "@/lib/utils";
 import { ScrollArea } from "./ui/scroll-area";
+import Link from "next/link";
 
 export function MainNav({ children }: { children: React.ReactNode }) {
   return (
@@ -38,7 +40,7 @@ export function MainNav({ children }: { children: React.ReactNode }) {
               <NavigationMenuContent>
                 <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[1fr_1fr]">
                   <ListItem href="/" title="Sales">
-                    Re-usable components built using Radix UI and Tailwind CSS.
+                    Available modern properties for sale.
                   </ListItem>
                   <ListItem href="/" title="Rentals">
                     Available modern properties for long term rent.
@@ -47,9 +49,6 @@ export function MainNav({ children }: { children: React.ReactNode }) {
                     Styles for headings, paragraphs, lists...etc
                   </ListItem>
                   <ListItem href="/" title="Latest listings">
-                    Styles for headings, paragraphs, lists...etc
-                  </ListItem>
-                  <ListItem href="/" title="Map search">
                     Styles for headings, paragraphs, lists...etc
                   </ListItem>
                 </ul>

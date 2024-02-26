@@ -32,93 +32,129 @@ export function MainNav({ children }: { children: React.ReactNode }) {
       <nav className="flex justify-end pr-10  md:border-b fixed top-0 w-full bg-white">
         <NavigationMenu className="hidden md:block p-4">
           <NavigationMenuList>
-            <NavigationMenuItem>
-              <Button variant="ghost">Home</Button>
+            <NavigationMenuItem asChild>
+              <Link href="/">
+                <Button variant="ghost">Home</Button>
+              </Link>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <NavigationMenuTrigger>Properties</NavigationMenuTrigger>
+              <NavigationMenuTrigger>
+                <Link href="/properties">Properties</Link>
+              </NavigationMenuTrigger>
               <NavigationMenuContent>
                 <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[1fr_1fr]">
-                  <ListItem href="/" title="Sales">
+                  <LinkItem href="/properties/for-sale" title="Sales">
                     Available modern properties for sale.
-                  </ListItem>
-                  <ListItem href="/" title="Rentals">
+                  </LinkItem>
+                  <LinkItem href="/properties/for-rent" title="Rentals">
                     Available modern properties for long term rent.
-                  </ListItem>
-                  <ListItem href="/" title="Developments">
-                    Styles for headings, paragraphs, lists...etc
-                  </ListItem>
-                  <ListItem href="/" title="Latest listings">
-                    Styles for headings, paragraphs, lists...etc
-                  </ListItem>
+                  </LinkItem>
+                  <LinkItem
+                    href="/properties/developments"
+                    title="Developments"
+                  >
+                    Available modern properties for sale.
+                  </LinkItem>
+                  <LinkItem
+                    href="/properties/latest-listings"
+                    title="Latest Listings"
+                  >
+                    Available modern properties for sale.
+                  </LinkItem>
                 </ul>
               </NavigationMenuContent>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <NavigationMenuTrigger>Areas</NavigationMenuTrigger>
+              <NavigationMenuTrigger>
+                <Link href="/areas">Areas</Link>
+              </NavigationMenuTrigger>
               <NavigationMenuContent>
                 <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[1fr_1fr]">
-                  <ListItem href="/" title="Marbella">
+                  <LinkItem href="/areas/marbella" title="Marbella">
                     Nueva Andalucia, Sierra Blanca, The Golden Mile, Puerto
                     Banus, San Pedro, Guadalmina, Marbella Center
-                  </ListItem>
-                  <ListItem href="/" title="East Marbella">
+                  </LinkItem>
+                  <LinkItem href="/areas/east-marbella" title="East Marbella">
                     Cabopino, Elviria, Las Chapas, El Rosario, Costabella, Los
                     Monteros, Bahia de Marbella, Rio Real
-                  </ListItem>
-                  <ListItem href="/" title="Benahavis">
+                  </LinkItem>
+                  <LinkItem href="/areas/benahavis" title="Benahavis">
                     La Quinta, Los Arqueros, La Zagaleta, Los Flamingos,
                     Benahavis Village
-                  </ListItem>
-                  <ListItem href="/" title="Estepona">
+                  </LinkItem>
+                  <LinkItem href="/areas/estepona" title="Estepona">
                     Atalaya, El Paraiso, Cancelada, Costalita, La Resina, New
                     Golden Mile, Estepona Center
-                  </ListItem>
+                  </LinkItem>
                 </ul>
               </NavigationMenuContent>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <NavigationMenuTrigger>Services</NavigationMenuTrigger>
+              <NavigationMenuTrigger>
+                <Link href="/services">Services</Link>
+              </NavigationMenuTrigger>
               <NavigationMenuContent>
                 <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[1fr_1fr]">
-                  <ListItem href="/" title="Legal services">
+                  <LinkItem
+                    href="/services/legal-services"
+                    title="Legal services"
+                  >
                     Re-usable components built using Radix UI and Tailwind CSS.
-                  </ListItem>
-                  <ListItem href="/" title="Property management">
+                  </LinkItem>
+                  <LinkItem
+                    href="/services/property-management"
+                    title="Property management"
+                  >
                     How to install dependencies and structure your app.
-                  </ListItem>
-                  <ListItem href="/" title="Refurbishment">
+                  </LinkItem>
+                  <LinkItem
+                    href="/services/refurbishments"
+                    title="Refurbishment"
+                  >
                     Styles for headings, paragraphs, lists...etc
-                  </ListItem>
-                  <ListItem href="/" title="Interior design">
+                  </LinkItem>
+                  <LinkItem
+                    href="/services/interior-design"
+                    title="Interior design"
+                  >
                     Styles for headings, paragraphs, lists...etc
-                  </ListItem>
+                  </LinkItem>
                 </ul>
               </NavigationMenuContent>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <NavigationMenuTrigger>Property advice</NavigationMenuTrigger>
+              <NavigationMenuTrigger>
+                <Link href="/property-advice">Property Advice</Link>
+              </NavigationMenuTrigger>
               <NavigationMenuContent>
                 <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[1fr_1fr]">
-                  <ListItem href="/" title="FAQs">
+                  <LinkItem href="/property-advice/faqs" title="FAQs">
                     Re-usable components built using Radix UI and Tailwind CSS.
-                  </ListItem>
-                  <ListItem href="/" title="Seller's guide">
+                  </LinkItem>
+                  <LinkItem
+                    href="/property-advice/sellers-guide"
+                    title="Seller's guide"
+                  >
                     How to install dependencies and structure your app.
-                  </ListItem>
-                  <ListItem href="/" title="Buyer's guide">
+                  </LinkItem>
+                  <LinkItem
+                    href="/property-advice/buyers-guide"
+                    title="Buyer's guide"
+                  >
                     Styles for headings, paragraphs, lists...etc
-                  </ListItem>
-                  <ListItem href="/" title="Schools">
+                  </LinkItem>
+                  <LinkItem href="/property-advice/schools" title="Schools">
                     Styles for headings, paragraphs, lists...etc
-                  </ListItem>
+                  </LinkItem>
                 </ul>
               </NavigationMenuContent>
             </NavigationMenuItem>
-            <NavigationMenuItem>
-              <Button variant="ghost" className="">
-                Contact
-              </Button>
+            <NavigationMenuItem asChild>
+              <Link href="/contact">
+                <Button variant="ghost" className="">
+                  Contact
+                </Button>
+              </Link>
             </NavigationMenuItem>
           </NavigationMenuList>
         </NavigationMenu>
@@ -255,30 +291,32 @@ export function MainNav({ children }: { children: React.ReactNode }) {
   );
 }
 
-const ListItem = React.forwardRef<
-  React.ElementRef<"a">,
-  React.ComponentPropsWithoutRef<"a">
->(({ className, title, children, ...props }, ref) => {
+function LinkItem({
+  href,
+  title,
+  children,
+}: {
+  href: string;
+  title: string;
+  children: string;
+}) {
   return (
     <li>
       <NavigationMenuLink asChild>
-        <a
-          ref={ref}
+        <Link
+          href={href}
           className={cn(
-            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
-            className
+            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground hover:bg-slate-100 hover:text-slate-900 focus:bg-slate-100 focus:text-slate-900 focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-slate-100/50 data-[state=open]:bg-slate-100/50 dark:bg-slate-950 dark:hover:bg-slate-800 dark:hover:text-slate-50 dark:focus:bg-slate-800 dark:focus:text-slate-50 dark:data-[active]:bg-slate-800/50 dark:data-[state=open]:bg-slate-800/50"
           )}
-          {...props}
         >
           <div className="text-sm font-medium leading-none">{title}</div>
           <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
             {children}
           </p>
-        </a>
+        </Link>
       </NavigationMenuLink>
     </li>
   );
-});
-ListItem.displayName = "ListItem";
+}
 
 export default MainNav;

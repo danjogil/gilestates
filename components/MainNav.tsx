@@ -22,6 +22,7 @@ import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { HamburgerMenuIcon } from "@radix-ui/react-icons";
 import { cn } from "@/lib/utils";
+import { ScrollArea } from "./ui/scroll-area";
 
 export function MainNav({ children }: { children: React.ReactNode }) {
   return (
@@ -131,119 +132,121 @@ export function MainNav({ children }: { children: React.ReactNode }) {
               <HamburgerMenuIcon width="24" height="24" />
             </SheetTrigger>
           </div>
-          <SheetContent className="overflow-auto">
-            <NavigationMenu>
-              <NavigationMenuList className="flex flex-col gap-4 w-[30rem]">
-                <NavigationMenuItem className="mt-10">
-                  <Button
-                    variant="ghost"
-                    className="text-xl font-semibold w-[15rem]"
-                  >
-                    Home
-                  </Button>
-                </NavigationMenuItem>
-                <NavigationMenuItem>
-                  <Collapsible className="flex flex-col items-center">
-                    <CollapsibleTrigger asChild>
-                      <NavigationMenuTrigger className="w-[15rem] text-xl font-semibold">
-                        Properties
-                      </NavigationMenuTrigger>
-                    </CollapsibleTrigger>
-                    <CollapsibleContent className="w-[15rem] flex flex-col">
-                      <Button variant="ghost" className="text-lg mt-2">
-                        Homes for sale
-                      </Button>
-                      <Button variant="ghost" className="text-lg">
-                        Long term rentals
-                      </Button>
-                      <Button variant="ghost" className="text-lg">
-                        Developments
-                      </Button>
-                      <Button variant="ghost" className="text-lg">
-                        Latest listings
-                      </Button>
-                    </CollapsibleContent>
-                  </Collapsible>
-                </NavigationMenuItem>
-                <NavigationMenuItem>
-                  <Collapsible className="flex flex-col">
-                    <CollapsibleTrigger asChild>
-                      <NavigationMenuTrigger className="w-[15rem] text-xl font-semibold">
-                        Areas
-                      </NavigationMenuTrigger>
-                    </CollapsibleTrigger>
-                    <CollapsibleContent className="w-[15rem] flex flex-col">
-                      <Button variant="ghost" className="text-lg mt-2">
-                        Marbella
-                      </Button>
-                      <Button variant="ghost" className="text-lg">
-                        East Marbella
-                      </Button>
-                      <Button variant="ghost" className="text-lg">
-                        Benahavis
-                      </Button>
-                      <Button variant="ghost" className="text-lg">
-                        Estepona
-                      </Button>
-                    </CollapsibleContent>
-                  </Collapsible>
-                </NavigationMenuItem>
-                <NavigationMenuItem>
-                  <Collapsible className="flex flex-col">
-                    <CollapsibleTrigger asChild>
-                      <NavigationMenuTrigger className="w-[15rem] text-xl font-semibold">
-                        Services
-                      </NavigationMenuTrigger>
-                    </CollapsibleTrigger>
-                    <CollapsibleContent className="w-[15rem] flex flex-col">
-                      <Button variant="ghost" className="text-lg mt-2">
-                        Legal services
-                      </Button>
-                      <Button variant="ghost" className="text-lg">
-                        Property management
-                      </Button>
-                      <Button variant="ghost" className="text-lg">
-                        Refurbishments
-                      </Button>
-                      <Button variant="ghost" className="text-lg">
-                        Interior design
-                      </Button>
-                    </CollapsibleContent>
-                  </Collapsible>
-                </NavigationMenuItem>
-                <NavigationMenuItem>
-                  <Collapsible className="flex flex-col">
-                    <CollapsibleTrigger asChild>
-                      <NavigationMenuTrigger className="w-[15rem] text-xl font-semibold">
-                        Property advice
-                      </NavigationMenuTrigger>
-                    </CollapsibleTrigger>
-                    <CollapsibleContent className="w-[15rem] flex flex-col">
-                      <Button variant="ghost" className="text-lg mt-2">
-                        FAQs
-                      </Button>
-                      <Button variant="ghost" className="text-lg">
-                        Seller&apos;s guide
-                      </Button>
-                      <Button variant="ghost" className="text-lg">
-                        Buyer&apos;s guide
-                      </Button>
-                      <Button variant="ghost" className="text-lg">
-                        Schools
-                      </Button>
-                    </CollapsibleContent>
-                  </Collapsible>
-                </NavigationMenuItem>
-                <NavigationMenuItem>
-                  <Button
-                    variant="ghost"
-                    className="text-xl font-semibold w-[15rem]"
-                  >
-                    Contact
-                  </Button>
-                </NavigationMenuItem>
-              </NavigationMenuList>
-            </NavigationMenu>
+          <SheetContent className="pt-12 px-0">
+            <ScrollArea className="h-full">
+              <NavigationMenu className="max-w-full">
+                <NavigationMenuList className="flex flex-col gap-4 justify-center items-center">
+                  <NavigationMenuItem className="mt-16">
+                    <Button
+                      variant="ghost"
+                      className="text-xl font-semibold w-[15rem]"
+                    >
+                      Home
+                    </Button>
+                  </NavigationMenuItem>
+                  <NavigationMenuItem>
+                    <Collapsible className="flex flex-col">
+                      <CollapsibleTrigger asChild>
+                        <NavigationMenuTrigger className="text-xl font-semibold w-[15rem]">
+                          Properties
+                        </NavigationMenuTrigger>
+                      </CollapsibleTrigger>
+                      <CollapsibleContent className="flex flex-col">
+                        <Button variant="ghost" className="text-lg mt-2">
+                          Homes for sale
+                        </Button>
+                        <Button variant="ghost" className="text-lg">
+                          Long term rentals
+                        </Button>
+                        <Button variant="ghost" className="text-lg">
+                          Developments
+                        </Button>
+                        <Button variant="ghost" className="text-lg">
+                          Latest listings
+                        </Button>
+                      </CollapsibleContent>
+                    </Collapsible>
+                  </NavigationMenuItem>
+                  <NavigationMenuItem>
+                    <Collapsible className="flex flex-col">
+                      <CollapsibleTrigger asChild>
+                        <NavigationMenuTrigger className="text-xl font-semibold w-[15rem]">
+                          Areas
+                        </NavigationMenuTrigger>
+                      </CollapsibleTrigger>
+                      <CollapsibleContent className="flex flex-col">
+                        <Button variant="ghost" className="text-lg mt-2">
+                          Marbella
+                        </Button>
+                        <Button variant="ghost" className="text-lg">
+                          East Marbella
+                        </Button>
+                        <Button variant="ghost" className="text-lg">
+                          Benahavis
+                        </Button>
+                        <Button variant="ghost" className="text-lg">
+                          Estepona
+                        </Button>
+                      </CollapsibleContent>
+                    </Collapsible>
+                  </NavigationMenuItem>
+                  <NavigationMenuItem>
+                    <Collapsible className="flex flex-col">
+                      <CollapsibleTrigger asChild>
+                        <NavigationMenuTrigger className="text-xl font-semibold w-[15rem]">
+                          Services
+                        </NavigationMenuTrigger>
+                      </CollapsibleTrigger>
+                      <CollapsibleContent className=" flex flex-col">
+                        <Button variant="ghost" className="text-lg mt-2">
+                          Legal services
+                        </Button>
+                        <Button variant="ghost" className="text-lg">
+                          Property management
+                        </Button>
+                        <Button variant="ghost" className="text-lg">
+                          Refurbishments
+                        </Button>
+                        <Button variant="ghost" className="text-lg">
+                          Interior design
+                        </Button>
+                      </CollapsibleContent>
+                    </Collapsible>
+                  </NavigationMenuItem>
+                  <NavigationMenuItem>
+                    <Collapsible className="flex flex-col">
+                      <CollapsibleTrigger asChild>
+                        <NavigationMenuTrigger className="text-xl font-semibold w-[15rem]">
+                          Property advice
+                        </NavigationMenuTrigger>
+                      </CollapsibleTrigger>
+                      <CollapsibleContent className=" flex flex-col">
+                        <Button variant="ghost" className="text-lg mt-2">
+                          FAQs
+                        </Button>
+                        <Button variant="ghost" className="text-lg">
+                          Seller&apos;s guide
+                        </Button>
+                        <Button variant="ghost" className="text-lg">
+                          Buyer&apos;s guide
+                        </Button>
+                        <Button variant="ghost" className="text-lg">
+                          Schools
+                        </Button>
+                      </CollapsibleContent>
+                    </Collapsible>
+                  </NavigationMenuItem>
+                  <NavigationMenuItem>
+                    <Button
+                      variant="ghost"
+                      className="text-xl font-semibold w-[15rem]"
+                    >
+                      Contact
+                    </Button>
+                  </NavigationMenuItem>
+                </NavigationMenuList>
+              </NavigationMenu>
+            </ScrollArea>
           </SheetContent>
         </Sheet>
       </nav>

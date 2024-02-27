@@ -3,22 +3,22 @@
 import PropertySearch from "@/components/PropertySearch";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
-// import { useRef } from "react";
+import { useRef } from "react";
 
 export default function Home() {
-  // const targetRef = useRef<HTMLDivElement>(null);
+  const targetRef = useRef<HTMLDivElement>(null);
 
-  function scrollToTargetAdjusted() {
-    let element = document.getElementById("targetElement");
-    let headerOffset = 100;
-    let elementPosition = element!.getBoundingClientRect().top;
-    let offsetPosition = elementPosition + window.scrollY - headerOffset;
+  // function scrollToTargetAdjusted() {
+  //   let element = document.getElementById("targetElement");
+  //   let headerOffset = 100;
+  //   let elementPosition = element!.getBoundingClientRect().top;
+  //   let offsetPosition = elementPosition + window.scrollY - headerOffset;
 
-    window.scrollTo({
-      top: offsetPosition,
-      behavior: "smooth",
-    });
-  }
+  //   window.scrollTo({
+  //     top: offsetPosition,
+  //     behavior: "smooth",
+  //   });
+  // }
 
   return (
     <main className="min-h-screen">
@@ -29,16 +29,19 @@ export default function Home() {
         </div>
 
         <Button
-          // onClick={() =>
-          //   targetRef.current?.scrollIntoView({ behavior: "smooth" })
-          // }
-          onClick={scrollToTargetAdjusted}
+          onClick={() =>
+            targetRef.current?.scrollIntoView({
+              behavior: "smooth",
+              block: "center",
+            })
+          }
+          // onClick={scrollToTargetAdjusted}
         >
           Start your search
         </Button>
       </div>
 
-      <div id="targetElement">
+      <div ref={targetRef} id="targetElement">
         <PropertySearch />
       </div>
 

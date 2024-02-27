@@ -23,9 +23,15 @@ export default function Home() {
   return (
     <main className="min-h-screen">
       <div className="h-screen flex justify-evenly items-center flex-col">
+        <Image
+          src="/marbella.jpg"
+          fill
+          className="z-0 object-cover object-left"
+          alt="marbella"
+        />
         <div className="flex flex-col items-center">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl">WELCOME TO</h1>
-          <h1 className="text-4xl sm:text-5xl md:text-6xl">GIL ESTATES</h1>
+          <h1 className="text-4xl sm:text-5xl md:text-6xl z-10">WELCOME TO</h1>
+          <h1 className="text-4xl sm:text-5xl md:text-6xl z-10">GIL ESTATES</h1>
         </div>
 
         <Button
@@ -35,6 +41,7 @@ export default function Home() {
               block: "center",
             })
           }
+          className="z-10"
           // onClick={scrollToTargetAdjusted}
         >
           Start your search
@@ -45,7 +52,13 @@ export default function Home() {
         <PropertySearch />
       </div>
 
-      <div className="p-4 flex flex-wrap gap-6">
+      <div className="px-4 md:py-4 flex flex-wrap gap-6 justify-center mt-10">
+        <h2 className="uppercase text-lg font-semibold sm:text-2xl md:text-3xl">
+          Latest listings
+        </h2>
+      </div>
+
+      <div className="p-4 flex flex-wrap gap-6 justify-center">
         <div className="relative">
           <Image
             src="/marbella.jpg"
@@ -55,7 +68,7 @@ export default function Home() {
             alt="marbella"
           />
           <div className="bg-[rgba(0,0,0,.5)] absolute bottom-0 w-full ">
-            <p className="text-white font-semibold p-2 uppercase">
+            <p className="text-white font-semibold p-2 uppercase sm:text-xl md:text-2xl">
               Luxury villas in Marbella
             </p>
           </div>
@@ -69,7 +82,7 @@ export default function Home() {
             alt="marbella"
           />
           <div className="bg-[rgba(0,0,0,.5)] absolute bottom-0 w-full ">
-            <p className="text-white font-semibold p-2 uppercase">
+            <p className="text-white font-semibold p-2 uppercase sm:text-xl md:text-2xl">
               Luxury apartments in Marbella
             </p>
           </div>
@@ -83,7 +96,7 @@ export default function Home() {
             alt="marbella"
           />
           <div className="bg-[rgba(0,0,0,.5)] absolute bottom-0 w-full ">
-            <p className="text-white font-semibold p-2 uppercase">
+            <p className="text-white font-semibold p-2 uppercase sm:text-xl md:text-2xl">
               New Developments
             </p>
           </div>
@@ -97,7 +110,72 @@ export default function Home() {
             alt="marbella"
           />
           <div className="bg-[rgba(0,0,0,.5)] absolute bottom-0 w-full ">
-            <p className="text-white font-semibold p-2 uppercase">
+            <p className="text-white font-semibold p-2 uppercase sm:text-xl md:text-2xl">
+              Luxury rentals
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div className="px-4 md:py-4 flex flex-wrap gap-6 justify-center mt-10">
+        <h2 className="uppercase text-lg font-semibold sm:text-2xl md:text-3xl">
+          Our villas and apartments
+        </h2>
+      </div>
+
+      <div className="p-4 flex flex-wrap gap-6 justify-center">
+        <div className="relative">
+          <Image
+            src="/marbella.jpg"
+            width={700}
+            height={300}
+            className="grow"
+            alt="marbella"
+          />
+          <div className="bg-[rgba(0,0,0,.5)] absolute bottom-0 w-full ">
+            <p className="text-white font-semibold p-2 uppercase sm:text-xl md:text-2xl">
+              Luxury villas in Marbella
+            </p>
+          </div>
+        </div>
+        <div className="relative">
+          <Image
+            src="/marbella.jpg"
+            width={700}
+            height={300}
+            className="grow"
+            alt="marbella"
+          />
+          <div className="bg-[rgba(0,0,0,.5)] absolute bottom-0 w-full ">
+            <p className="text-white font-semibold p-2 uppercase sm:text-xl md:text-2xl">
+              Luxury apartments in Marbella
+            </p>
+          </div>
+        </div>
+        <div className="relative">
+          <Image
+            src="/marbella.jpg"
+            width={700}
+            height={300}
+            className="grow"
+            alt="marbella"
+          />
+          <div className="bg-[rgba(0,0,0,.5)] absolute bottom-0 w-full ">
+            <p className="text-white font-semibold p-2 uppercase sm:text-xl md:text-2xl">
+              New Developments
+            </p>
+          </div>
+        </div>
+        <div className="relative">
+          <Image
+            src="/marbella.jpg"
+            width={700}
+            height={300}
+            className="grow"
+            alt="marbella"
+          />
+          <div className="bg-[rgba(0,0,0,.5)] absolute bottom-0 w-full ">
+            <p className="text-white font-semibold p-2 uppercase sm:text-xl md:text-2xl">
               Luxury rentals
             </p>
           </div>

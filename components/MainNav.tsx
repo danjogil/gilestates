@@ -34,7 +34,7 @@ import Link from "next/link";
 export function MainNav({ children }: { children: React.ReactNode }) {
   return (
     <>
-      <nav className="flex justify-end pr-10 md:border-b fixed top-0 z-10 w-full bg-white">
+      <nav className="flex justify-end pr-10 md:border-b fixed top-0 z-50 w-full bg-white">
         <NavigationMenu className="hidden md:block p-4">
           <NavigationMenuList>
             <NavigationMenuItem asChild>
@@ -165,7 +165,7 @@ export function MainNav({ children }: { children: React.ReactNode }) {
         </NavigationMenu>
       </nav>
 
-      <nav className="fixed top-0 z-10 w-full">
+      <nav className="fixed top-0 z-50 w-full">
         <Sheet>
           <div className="flex justify-end p-4 md:hidden border-b bg-white">
             <SheetTrigger>

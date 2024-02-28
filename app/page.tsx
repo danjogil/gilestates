@@ -28,12 +28,18 @@ export default function Home() {
             src="/apartment-1.jpg"
             fill
             alt="marbella"
-            className="object-cover"
+            className="object-cover hidden md:block"
+          />
+          <Image
+            src="/mobile-photo.jpg"
+            fill
+            alt="marbella"
+            className="object-cover block md:hidden"
           />
         </div>
         <div className="flex flex-col items-center text-white drop-shadow-md">
-          <h1 className="text-4xl sm:text-5xl md:text-8xl z-10">WELCOME TO</h1>
-          <h1 className="text-4xl sm:text-5xl md:text-8xl z-10">GIL ESTATES</h1>
+          <h1 className="text-5xl sm:text-6xl md:text-8xl z-10">WELCOME TO</h1>
+          <h1 className="text-5xl sm:text-6xl md:text-8xl z-10">GIL ESTATES</h1>
         </div>
 
         <Button

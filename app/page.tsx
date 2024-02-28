@@ -23,15 +23,17 @@ export default function Home() {
   return (
     <main className="min-h-screen">
       <div className="h-screen flex justify-evenly items-center flex-col">
-        {/* <Image
-          src="/marbella.jpg"
-          fill
-          className="z-0 object-cover object-left"
-          alt="marbella"
-        /> */}
-        <div className="flex flex-col items-center">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl z-10">WELCOME TO</h1>
-          <h1 className="text-4xl sm:text-5xl md:text-6xl z-10">GIL ESTATES</h1>
+        <div className="absolute w-full h-screen">
+          <Image
+            src="/apartment-1.jpg"
+            fill
+            alt="marbella"
+            className="object-cover"
+          />
+        </div>
+        <div className="flex flex-col items-center text-white drop-shadow-md">
+          <h1 className="text-4xl sm:text-5xl md:text-8xl z-10">WELCOME TO</h1>
+          <h1 className="text-4xl sm:text-5xl md:text-8xl z-10">GIL ESTATES</h1>
         </div>
 
         <Button
@@ -41,7 +43,8 @@ export default function Home() {
               block: "center",
             })
           }
-          className="z-10"
+          className="z-10 md:p-6 md:text-lg shadow-md uppercase cursor-pointer"
+          variant="secondary"
           // onClick={scrollToTargetAdjusted}
         >
           Start your search

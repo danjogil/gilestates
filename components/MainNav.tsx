@@ -30,6 +30,7 @@ import { HamburgerMenuIcon } from "@radix-ui/react-icons";
 import { cn } from "@/lib/utils";
 import { ScrollArea } from "./ui/scroll-area";
 import Link from "next/link";
+import Image from "next/image";
 
 export function MainNav({ children }: { children: React.ReactNode }) {
   return (

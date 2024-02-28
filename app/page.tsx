@@ -62,63 +62,67 @@ export default function Home() {
       </div>
 
       <div className="p-4 flex flex-wrap gap-6 md:gap-10 justify-center">
-        <div className="relative w-[85vw] h-[55vw] max-w-[600px] max-h-[400px] flex justify-center">
-          <Image src="/villa-1.jpg" fill alt="marbella" />
-          <div className="bg-[rgba(0,0,0,.4)] absolute top-0 bottom-0 m-auto h-[70%] w-[70%] flex flex-col items-center justify-center gap-2 divide-y-2">
-            <p className="text-white font-semibold uppercase sm:text-xl md:text-2xl">
-              Nueva Andalucia
-            </p>
-            <p className="text-white font-semibold uppercase text-sm pt-2 sm:text-md md:text-lg">
-              4 beds 3 baths
-            </p>
-            <p className="text-white font-semibold pt-2 sm:text-xl md:text-2xl">
-              $1,200,000
-            </p>
+        <div className="flex flex-col md:flex-row w-[90%] h-[100vw] md:h-[30vw] gap-6 md:gap-10">
+          <div className="relative grow flex justify-center">
+            <Image src="/villa-1.jpg" fill alt="marbella" />
+            <div className="bg-[rgba(0,0,0,.4)] absolute top-0 bottom-0 m-auto h-[70%] w-[70%] flex flex-col items-center justify-center gap-2 divide-y-2">
+              <p className="text-white font-semibold uppercase sm:text-lg md:text-xl lg:text-2xl">
+                Nueva Andalucia
+              </p>
+              <p className="text-white font-semibold uppercase text-sm pt-2 sm:text-sm md:text-md lg:text-lg">
+                4 beds 3 baths
+              </p>
+              <p className="text-white font-semibold pt-2 sm:text-lg md:text-xl lg:text-2xl">
+                $1,200,000
+              </p>
+            </div>
+          </div>
+
+          <div className="relative grow flex justify-center">
+            <Image src="/apartment-1.jpg" fill alt="marbella" />
+            <div className="bg-[rgba(0,0,0,.4)] absolute top-0 bottom-0 m-auto h-[70%] w-[70%] flex flex-col items-center justify-center gap-2 divide-y-2">
+              <p className="text-white font-semibold uppercase sm:text-lg md:text-xl lg:text-2xl">
+                Sierra Blanca
+              </p>
+              <p className="text-white font-semibold uppercase text-sm pt-2 sm:text-sm md:text-md lg:text-lg">
+                3 beds 3 baths
+              </p>
+              <p className="text-white font-semibold pt-2 sm:text-lg md:text-xl lg:text-2xl">
+                $900,000
+              </p>
+            </div>
           </div>
         </div>
 
-        <div className="relative w-[85vw] h-[55vw] max-w-[600px] max-h-[400px] flex justify-center">
-          <Image src="/apartment-1.jpg" fill alt="marbella" />
-          <div className="bg-[rgba(0,0,0,.4)] absolute top-0 bottom-0 m-auto h-[70%] w-[70%] flex flex-col items-center justify-center gap-2 divide-y-2">
-            <p className="text-white font-semibold uppercase sm:text-xl md:text-2xl">
-              Sierra Blanca
-            </p>
-            <p className="text-white font-semibold uppercase text-sm pt-2 sm:text-md md:text-lg">
-              3 beds 3 baths
-            </p>
-            <p className="text-white font-semibold pt-2 sm:text-xl md:text-2xl">
-              $900,000
-            </p>
+        <div className="flex flex-col md:flex-row w-[90%] h-[100vw] md:h-[30vw] gap-6 md:gap-10">
+          <div className="relative grow flex justify-center">
+            <Image src="/villa-2.jpg" fill alt="marbella" />
+            <div className="bg-[rgba(0,0,0,.4)] absolute top-0 bottom-0 m-auto h-[70%] w-[70%] flex flex-col items-center justify-center gap-2 divide-y-2">
+              <p className="text-white font-semibold uppercase sm:text-lg md:text-xl lg:text-2xl">
+                Marbella
+              </p>
+              <p className="text-white font-semibold uppercase text-sm pt-2 sm:text-sm md:text-md lg:text-lg">
+                5 beds 4 baths
+              </p>
+              <p className="text-white font-semibold pt-2 sm:text-lg md:text-xl lg:text-2xl">
+                $2,500,000
+              </p>
+            </div>
           </div>
-        </div>
 
-        <div className="relative w-[85vw] h-[55vw] max-w-[600px] max-h-[400px] flex justify-center">
-          <Image src="/villa-2.jpg" fill alt="marbella" />
-          <div className="bg-[rgba(0,0,0,.4)] absolute top-0 bottom-0 m-auto h-[70%] w-[70%] flex flex-col items-center justify-center gap-2 divide-y-2">
-            <p className="text-white font-semibold uppercase sm:text-xl md:text-2xl">
-              Marbella
-            </p>
-            <p className="text-white font-semibold uppercase text-sm pt-2 sm:text-md md:text-lg">
-              5 beds 4 baths
-            </p>
-            <p className="text-white font-semibold pt-2 sm:text-xl md:text-2xl">
-              $2,500,000
-            </p>
-          </div>
-        </div>
-
-        <div className="relative w-[85vw] h-[55vw] max-w-[600px] max-h-[400px] flex justify-center">
-          <Image src="/apartment-2.jpg" fill alt="marbella" />
-          <div className="bg-[rgba(0,0,0,.4)] absolute top-0 bottom-0 m-auto h-[70%] w-[70%] flex flex-col items-center justify-center gap-2 divide-y-2">
-            <p className="text-white font-semibold uppercase sm:text-xl md:text-2xl">
-              The Golden Mile
-            </p>
-            <p className="text-white font-semibold uppercase text-sm pt-2 sm:text-md md:text-lg">
-              3 beds 2 baths
-            </p>
-            <p className="text-white font-semibold pt-2 sm:text-xl md:text-2xl">
-              $750,000
-            </p>
+          <div className="relative grow flex justify-center">
+            <Image src="/apartment-2.jpg" fill alt="marbella" />
+            <div className="bg-[rgba(0,0,0,.4)] absolute top-0 bottom-0 m-auto h-[70%] w-[70%] flex flex-col items-center justify-center gap-2 divide-y-2">
+              <p className="text-white font-semibold uppercase sm:text-lg md:text-xl lg:text-2xl">
+                The Golden Mile
+              </p>
+              <p className="text-white font-semibold uppercase text-sm pt-2 sm:text-sm md:text-md lg:text-lg">
+                3 beds 2 baths
+              </p>
+              <p className="text-white font-semibold pt-2 sm:text-lg md:text-xl lg:text-2xl">
+                $750,000
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -130,39 +134,43 @@ export default function Home() {
       </div>
 
       <div className="p-4 flex flex-wrap gap-6 md:gap-10 justify-center">
-        <div className="relative w-[85vw] h-[55vw] max-w-[600px] max-h-[400px] flex justify-center">
-          <Image src="/villa-1.jpg" fill alt="marbella" />
-          <div className="bg-[rgba(0,0,0,.4)] absolute bottom-0 h-[15%] w-full flex flex-col items-center justify-center gap-2 divide-y-2">
-            <p className="text-white font-semibold uppercase text-lg sm:text-2xl md:text-3xl">
-              Luxury Villas
-            </p>
+        <div className="flex flex-col md:flex-row w-[90%] h-[100vw] md:h-[30vw] gap-6 md:gap-10">
+          <div className="relative grow flex justify-center">
+            <Image src="/villa-1.jpg" fill alt="marbella" />
+            <div className="bg-[rgba(0,0,0,.4)] absolute bottom-0 h-[15%] w-full flex flex-col items-center justify-center gap-2 divide-y-2">
+              <p className="text-white font-semibold uppercase text-lg sm:text-xl lg:text-2xl">
+                Luxury Villas
+              </p>
+            </div>
+          </div>
+
+          <div className="relative grow flex justify-center">
+            <Image src="/apartment-1.jpg" fill alt="marbella" />
+            <div className="bg-[rgba(0,0,0,.4)] absolute bottom-0 h-[15%] w-full flex flex-col items-center justify-center gap-2 divide-y-2">
+              <p className="text-white font-semibold uppercase text-lg sm:text-xl lg:text-2xl">
+                Luxury Apartments
+              </p>
+            </div>
           </div>
         </div>
 
-        <div className="relative w-[85vw] h-[55vw] max-w-[600px] max-h-[400px] flex justify-center">
-          <Image src="/apartment-1.jpg" fill alt="marbella" />
-          <div className="bg-[rgba(0,0,0,.4)] absolute bottom-0 h-[15%] w-full flex flex-col items-center justify-center gap-2 divide-y-2">
-            <p className="text-white font-semibold uppercase text-lg sm:text-2xl md:text-3xl">
-              Luxury Apartments
-            </p>
+        <div className="flex flex-col md:flex-row w-[90%] h-[100vw] md:h-[30vw] gap-6 md:gap-10">
+          <div className="relative grow flex justify-center">
+            <Image src="/villa-2.jpg" fill alt="marbella" />
+            <div className="bg-[rgba(0,0,0,.4)] absolute bottom-0 h-[15%] w-full flex flex-col items-center justify-center gap-2 divide-y-2">
+              <p className="text-white font-semibold uppercase text-lg sm:text-xl lg:text-2xl">
+                New Developments
+              </p>
+            </div>
           </div>
-        </div>
 
-        <div className="relative w-[85vw] h-[55vw] max-w-[600px] max-h-[400px] flex justify-center">
-          <Image src="/villa-2.jpg" fill alt="marbella" />
-          <div className="bg-[rgba(0,0,0,.4)] absolute bottom-0 h-[15%] w-full flex flex-col items-center justify-center gap-2 divide-y-2">
-            <p className="text-white font-semibold uppercase text-lg sm:text-2xl md:text-3xl">
-              New Developments
-            </p>
-          </div>
-        </div>
-
-        <div className="relative w-[85vw] h-[55vw] max-w-[600px] max-h-[400px] flex justify-center">
-          <Image src="/apartment-2.jpg" fill alt="marbella" />
-          <div className="bg-[rgba(0,0,0,.4)] absolute bottom-0 h-[15%] w-full flex flex-col items-center justify-center gap-2 divide-y-2">
-            <p className="text-white font-semibold uppercase text-lg sm:text-2xl md:text-3xl">
-              Luxury Rentals
-            </p>
+          <div className="relative grow flex justify-center">
+            <Image src="/apartment-2.jpg" fill alt="marbella" />
+            <div className="bg-[rgba(0,0,0,.4)] absolute bottom-0 h-[15%] w-full flex flex-col items-center justify-center gap-2 divide-y-2">
+              <p className="text-white font-semibold uppercase text-lg sm:text-xl lg:text-2xl">
+                Luxury Rentals
+              </p>
+            </div>
           </div>
         </div>
       </div>

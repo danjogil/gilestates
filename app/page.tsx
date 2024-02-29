@@ -71,7 +71,7 @@ export default function Home() {
         <div className="flex flex-col md:flex-row w-[90%] h-[100vw] md:h-[30vw] gap-6 md:gap-10">
           <div className="relative grow flex justify-center">
             <Image src="/villa-1.jpg" fill alt="marbella" />
-            <div className="bg-[rgba(0,0,0,.4)] absolute top-0 bottom-0 m-auto h-[70%] w-[70%] flex flex-col items-center justify-center gap-2 divide-y-2">
+            <div className="bg-[rgba(0,0,0,.4)] absolute top-0 bottom-0 m-auto h-[70%] w-[70%] cursor-pointer transition-all hover:h-[100%] hover:w-[100%] flex flex-col items-center justify-center gap-2 divide-y-2">
               <p className="text-white font-semibold uppercase sm:text-lg md:text-xl lg:text-2xl">
                 Nueva Andalucia
               </p>
@@ -86,7 +86,7 @@ export default function Home() {
 
           <div className="relative grow flex justify-center">
             <Image src="/apartment-1.jpg" fill alt="marbella" />
-            <div className="bg-[rgba(0,0,0,.4)] absolute top-0 bottom-0 m-auto h-[70%] w-[70%] flex flex-col items-center justify-center gap-2 divide-y-2">
+            <div className="bg-[rgba(0,0,0,.4)] absolute top-0 bottom-0 m-auto h-[70%] w-[70%] flex flex-col items-center justify-center gap-2 divide-y-2 cursor-pointer transition-all hover:h-[100%] hover:w-[100%]">
               <p className="text-white font-semibold uppercase sm:text-lg md:text-xl lg:text-2xl">
                 Sierra Blanca
               </p>
@@ -103,7 +103,7 @@ export default function Home() {
         <div className="flex flex-col md:flex-row w-[90%] h-[100vw] md:h-[30vw] gap-6 md:gap-10">
           <div className="relative grow flex justify-center">
             <Image src="/villa-2.jpg" fill alt="marbella" />
-            <div className="bg-[rgba(0,0,0,.4)] absolute top-0 bottom-0 m-auto h-[70%] w-[70%] flex flex-col items-center justify-center gap-2 divide-y-2">
+            <div className="bg-[rgba(0,0,0,.4)] absolute top-0 bottom-0 m-auto h-[70%] w-[70%] flex flex-col items-center justify-center gap-2 divide-y-2 cursor-pointer transition-all hover:h-[100%] hover:w-[100%]">
               <p className="text-white font-semibold uppercase sm:text-lg md:text-xl lg:text-2xl">
                 Marbella
               </p>
@@ -118,7 +118,7 @@ export default function Home() {
 
           <div className="relative grow flex justify-center">
             <Image src="/apartment-2.jpg" fill alt="marbella" />
-            <div className="bg-[rgba(0,0,0,.4)] absolute top-0 bottom-0 m-auto h-[70%] w-[70%] flex flex-col items-center justify-center gap-2 divide-y-2">
+            <div className="bg-[rgba(0,0,0,.4)] absolute top-0 bottom-0 m-auto h-[70%] w-[70%] flex flex-col items-center justify-center gap-2 divide-y-2 cursor-pointer transition-all hover:h-[100%] hover:w-[100%]">
               <p className="text-white font-semibold uppercase sm:text-lg md:text-xl lg:text-2xl">
                 The Golden Mile
               </p>
@@ -141,8 +141,8 @@ export default function Home() {
 
       <div className="p-4 flex flex-wrap gap-6 md:gap-10 justify-center">
         <div className="flex flex-col md:flex-row w-[90%] h-[100vw] md:h-[30vw] gap-6 md:gap-10">
-          <div className="relative grow flex justify-center">
-            <Image src="/villa-1.jpg" fill alt="marbella" />
+          <div className="relative grow flex justify-center cursor-pointer hover:opacity-80 transition-all">
+            <Image src="/villa-1.jpg" fill alt="marbella" className="" />
             <div className="bg-[rgba(0,0,0,.4)] absolute bottom-0 h-[15%] w-full flex flex-col items-center justify-center gap-2 divide-y-2">
               <p className="text-white font-semibold uppercase text-lg sm:text-xl lg:text-2xl">
                 Luxury Villas
@@ -150,7 +150,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="relative grow flex justify-center">
+          <div className="relative grow flex justify-center cursor-pointer hover:opacity-80 transition-all">
             <Image src="/apartment-1.jpg" fill alt="marbella" />
             <div className="bg-[rgba(0,0,0,.4)] absolute bottom-0 h-[15%] w-full flex flex-col items-center justify-center gap-2 divide-y-2">
               <p className="text-white font-semibold uppercase text-lg sm:text-xl lg:text-2xl">
@@ -161,7 +161,7 @@ export default function Home() {
         </div>
 
         <div className="flex flex-col md:flex-row w-[90%] h-[100vw] md:h-[30vw] gap-6 md:gap-10">
-          <div className="relative grow flex justify-center">
+          <div className="relative grow flex justify-center cursor-pointer hover:opacity-80 transition-all">
             <Image src="/villa-2.jpg" fill alt="marbella" />
             <div className="bg-[rgba(0,0,0,.4)] absolute bottom-0 h-[15%] w-full flex flex-col items-center justify-center gap-2 divide-y-2">
               <p className="text-white font-semibold uppercase text-lg sm:text-xl lg:text-2xl">
@@ -170,7 +170,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="relative grow flex justify-center">
+          <div className="relative grow flex justify-center cursor-pointer hover:opacity-80 transition-all">
             <Image src="/apartment-2.jpg" fill alt="marbella" />
             <div className="bg-[rgba(0,0,0,.4)] absolute bottom-0 h-[15%] w-full flex flex-col items-center justify-center gap-2 divide-y-2">
               <p className="text-white font-semibold uppercase text-lg sm:text-xl lg:text-2xl">

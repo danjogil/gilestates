@@ -61,10 +61,12 @@ export default function Home() {
         <PropertySearch />
       </div>
 
-      <div className="px-4 md:py-4 flex flex-wrap gap-6 justify-center mt-10">
-        <h2 className="uppercase text-xl font-semibold sm:text-2xl md:text-3xl">
+      <div className="px-4 md:py-4 flex gap-6 justify-center mt-10 md:w-full items-center">
+        <div className="hidden md:block md:border-t-4 md:border-black md:grow md:ml-10"></div>
+        <h2 className="uppercase text-xl font-semibold sm:text-2xl md:text-3xl border-b-2 md:border-b-0 border-black text-center">
           Latest listings
         </h2>
+        <div className="hidden md:block md:border-t-4 md:border-black md:grow md:mr-10"></div>
       </div>
 
       <div className="p-4 flex flex-wrap gap-6 md:gap-10 justify-center">
@@ -133,10 +135,12 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="px-4 md:py-4 flex flex-wrap gap-6 justify-center mt-10">
-        <h2 className="uppercase text-xl font-semibold sm:text-2xl md:text-3xl">
+      <div className="px-4 md:py-4 flex gap-6 justify-center mt-10 md:w-full items-center">
+        <div className="hidden md:block md:border-t-4 md:border-black md:grow md:ml-10"></div>
+        <h2 className="uppercase text-xl font-semibold sm:text-2xl md:text-3xl border-b-2 md:border-b-0 border-black text-center">
           Our villas and apartments
         </h2>
+        <div className="hidden md:block md:border-t-4 md:border-black md:grow md:mr-10"></div>
       </div>
 
       <div className="p-4 flex flex-wrap gap-6 md:gap-10 justify-center">
@@ -181,27 +185,31 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="my-10 px-4 py-8 md:px-10 flex flex-col items-center bg-stone-900 text-stone-200">
-        <h2 className="uppercase font-semibold text-lg sm:text-2xl md:text-3xl pb-4">
+      <div className="my-10 px-4 py-8 md:px-10 flex flex-col items-center bg-stone-900 text-stone-200 divide-y-2">
+        <h2 className="uppercase font-semibold text-xl sm:text-2xl md:text-3xl pb-4">
           About us
         </h2>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur
-          molestiae numquam dignissimos facilis commodi ipsa consequuntur
-          eveniet consequatur? Minus sequi dicta eum officiis corrupti nobis
-          doloribus provident eos repudiandae temporibus. Lorem ipsum dolor sit
-          amet consectetur adipisicing elit. Consectetur molestiae numquam
-          dignissimos facilis commodi ipsa consequuntur eveniet consequatur?
-          Minus sequi dicta eum officiis corrupti nobis doloribus provident eos
-          repudiandae temporibus. Lorem ipsum dolor sit amet consectetur
-          adipisicing elit. Iusto delectus, accusantium, quaerat et nihil
-          explicabo a eos at voluptatum similique culpa. Labore rem eveniet odit
-          ea quis culpa, suscipit expedita. Lorem ipsum dolor, sit amet
-          consectetur adipisicing elit. Recusandae repellendus, quibusdam
-          impedit dignissimos placeat, iste quidem veritatis asperiores unde
-          molestiae aspernatur obcaecati aut ipsam facere voluptas at magni
-          explicabo ut?
-        </p>
+        <div className="pt-4 px-4 flex flex-col gap-4">
+          <p className="text-md">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur
+            molestiae numquam dignissimos facilis commodi ipsa consequuntur
+            eveniet consequatur? Minus sequi dicta eum officiis corrupti nobis
+            doloribus provident eos repudiandae temporibus. Lorem ipsum dolor
+            sit amet consectetur adipisicing elit. Consectetur molestiae numquam
+            dignissimos facilis commodi ipsa consequuntur eveniet consequatur?
+          </p>
+          <p>
+            Minus sequi dicta eum officiis corrupti nobis doloribus provident
+            eos repudiandae temporibus. Lorem ipsum dolor sit amet consectetur
+            adipisicing elit. Iusto delectus, accusantium, quaerat et nihil
+            explicabo a eos at voluptatum similique culpa. Labore rem eveniet
+            odit ea quis culpa, suscipit expedita. Lorem ipsum dolor, sit amet
+            consectetur adipisicing elit. Recusandae repellendus, quibusdam
+            impedit dignissimos placeat, iste quidem veritatis asperiores unde
+            molestiae aspernatur obcaecati aut ipsam facere voluptas at magni
+            explicabo ut?
+          </p>
+        </div>
       </div>
 
       <footer className="bg-black text-slate-200 h-[75px] p-4">

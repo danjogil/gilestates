@@ -62,11 +62,11 @@ export default function Home() {
       </div>
 
       <div className="px-4 md:py-4 flex gap-6 justify-center mt-10 md:w-full items-center">
-        <div className="hidden md:block md:border-t-4 md:border-black md:grow md:ml-10"></div>
+        <div className="hidden md:block md:border-t-2 md:border-black md:grow md:ml-10"></div>
         <h2 className="uppercase text-xl font-semibold sm:text-2xl md:text-3xl border-b-2 md:border-b-0 border-black text-center">
           Latest listings
         </h2>
-        <div className="hidden md:block md:border-t-4 md:border-black md:grow md:mr-10"></div>
+        <div className="hidden md:block md:border-t-2 md:border-black md:grow md:mr-10"></div>
       </div>
 
       <div className="p-4 flex flex-wrap gap-6 md:gap-10 justify-center">
@@ -136,11 +136,11 @@ export default function Home() {
       </div>
 
       <div className="px-4 md:py-4 flex gap-6 justify-center mt-10 md:w-full items-center">
-        <div className="hidden md:block md:border-t-4 md:border-black md:grow md:ml-10"></div>
+        <div className="hidden md:block md:border-t-2 md:border-black md:grow md:ml-10"></div>
         <h2 className="uppercase text-xl font-semibold sm:text-2xl md:text-3xl border-b-2 md:border-b-0 border-black text-center">
-          Our villas and apartments
+          Our properties
         </h2>
-        <div className="hidden md:block md:border-t-4 md:border-black md:grow md:mr-10"></div>
+        <div className="hidden md:block md:border-t-2 md:border-black md:grow md:mr-10"></div>
       </div>
 
       <div className="p-4 flex flex-wrap gap-6 md:gap-10 justify-center">

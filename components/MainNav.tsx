@@ -35,7 +35,7 @@ import Image from "next/image";
 export function MainNav({ children }: { children: React.ReactNode }) {
   return (
     <>
-      <nav className="flex justify-end pr-10 md:border-b fixed top-0 z-50 w-full bg-stone-50">
+      <nav className="flex justify-end pr-10 md:border-b fixed top-0 z-50 w-full bg-white">
         <NavigationMenu className="hidden md:block p-4">
           <NavigationMenuList>
             <NavigationMenuItem asChild>
@@ -44,7 +44,7 @@ export function MainNav({ children }: { children: React.ReactNode }) {
               </Link>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <NavigationMenuTrigger className="bg-stone-50">
+              <NavigationMenuTrigger>
                 <Link href="/properties">Properties</Link>
               </NavigationMenuTrigger>
               <NavigationMenuContent>
@@ -71,7 +71,7 @@ export function MainNav({ children }: { children: React.ReactNode }) {
               </NavigationMenuContent>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <NavigationMenuTrigger className="bg-stone-50">
+              <NavigationMenuTrigger>
                 <Link href="/areas">Areas</Link>
               </NavigationMenuTrigger>
               <NavigationMenuContent>
@@ -96,7 +96,7 @@ export function MainNav({ children }: { children: React.ReactNode }) {
               </NavigationMenuContent>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <NavigationMenuTrigger className="bg-stone-50">
+              <NavigationMenuTrigger>
                 <Link href="/services">Services</Link>
               </NavigationMenuTrigger>
               <NavigationMenuContent>
@@ -129,7 +129,7 @@ export function MainNav({ children }: { children: React.ReactNode }) {
               </NavigationMenuContent>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <NavigationMenuTrigger className="bg-stone-50">
+              <NavigationMenuTrigger>
                 <Link href="/property-advice">Property Advice</Link>
               </NavigationMenuTrigger>
               <NavigationMenuContent>
@@ -168,7 +168,7 @@ export function MainNav({ children }: { children: React.ReactNode }) {
 
       <nav className="fixed top-0 z-50 w-full">
         <Sheet>
-          <div className="flex justify-end p-4 md:hidden border-b bg-stone-50">
+          <div className="flex justify-end p-4 md:hidden border-b bg-white">
             <SheetTrigger>
               <HamburgerMenuIcon width="24" height="24" />
             </SheetTrigger>

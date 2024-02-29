@@ -21,7 +21,7 @@ export default function Home() {
   // }
 
   return (
-    <main className="min-h-screen bg-stone-50">
+    <main className="min-h-screen">
       <div className="h-screen flex justify-evenly items-center flex-col">
         <div className="absolute w-full h-screen">
           <Image

@@ -398,433 +398,505 @@ function PropertySearch(): JSX.Element {
   return (
     <div className="mt-6">
       <Form {...form}>
-        <form
-          onSubmit={form.handleSubmit(onSubmit)}
-          className="gap-6 flex flex-col md:flex-row p-6 md:gap-8"
-        >
-          <div className="flex flex-col w-full gap-6">
-            <FormField
-              control={form.control}
-              name="location"
-              render={({ field }) => (
-                <FormItem className="flex flex-col">
-                  <FormLabel>Location</FormLabel>
-                  <Drawer open={openLocation} onOpenChange={setOpenLocation}>
-                    <DrawerTrigger asChild>
-                      <FormControl>
-                        <Button
-                          variant="outline"
-                          className={cn(
-                            "w-full justify-between",
-                            !field.value && "text-muted-foreground"
-                          )}
-                        >
-                          {field.value
-                            ? locations.find(
-                                (language) => language.value === field.value
-                              )?.label
-                            : "Select location"}
+        <form onSubmit={form.handleSubmit(onSubmit)}>
+          <div className="gap-6 flex flex-col md:flex-row p-6 md:gap-8">
+            <div className="flex flex-col w-full gap-6">
+              <FormField
+                control={form.control}
+                name="location"
+                render={({ field }) => (
+                  <FormItem className="flex flex-col">
+                    <FormLabel>Location</FormLabel>
+                    <Drawer open={openLocation} onOpenChange={setOpenLocation}>
+                      <DrawerTrigger asChild>
+                        <FormControl>
+                          <Button
+                            variant="outline"
+                            className={cn(
+                              "w-full justify-between",
+                              !field.value && "text-muted-foreground"
+                            )}
+                          >
+                            {field.value
+                              ? locations.find(
+                                  (language) => language.value === field.value
+                                )?.label
+                              : "Select location"}
 
-                          <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
-                        </Button>
-                      </FormControl>
-                    </DrawerTrigger>
-                    <DrawerContent>
-                      <div className="mt-4 border-t">
-                        <Command>
-                          <CommandInput placeholder="Search location..." />
-                          <CommandList>
-                            <CommandEmpty>Location not found.</CommandEmpty>
-                            <CommandGroup>
-                              {locations.map((location) => (
-                                <CommandItem
-                                  value={location.label}
-                                  key={location.value}
-                                  onSelect={() => {
-                                    form.setValue("location", location.value);
-                                    setOpenLocation(false);
-                                    setLocation(location.value);
-                                  }}
-                                >
-                                  <Check
-                                    className={cn(
-                                      "mr-2 h-4 w-4",
-                                      location.value === field.value
-                                        ? "opacity-100"
-                                        : "opacity-0"
-                                    )}
-                                  />
-                                  {location.label}
-                                </CommandItem>
-                              ))}
-                            </CommandGroup>
-                          </CommandList>
-                        </Command>
-                      </div>
-                    </DrawerContent>
-                  </Drawer>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-
-            <FormField
-              control={form.control}
-              name="area"
-              render={({ field }) => (
-                <FormItem className="flex flex-col">
-                  <FormLabel>Area</FormLabel>
-                  <Drawer open={openAreas} onOpenChange={setOpenAreas}>
-                    <DrawerTrigger asChild>
-                      <FormControl>
-                        <Button
-                          variant="outline"
-                          className={cn(
-                            "w-full justify-between",
-                            !field.value && "text-muted-foreground"
-                          )}
-                          disabled={!location}
-                        >
-                          {location === "east marbella" &&
-                            (field.value
-                              ? eastMarbella.find(
-                                  (area) => area.value === field.value
-                                )?.label
-                              : "Select area")}
-                          {location === "marbella" &&
-                            (field.value
-                              ? marbella.find(
-                                  (area) => area.value === field.value
-                                )?.label
-                              : "Select area")}
-                          {location === "benahavis" &&
-                            (field.value
-                              ? benahavis.find(
-                                  (area) => area.value === field.value
-                                )?.label
-                              : "Select area")}
-                          {location === "estepona" &&
-                            (field.value
-                              ? estepona.find(
-                                  (area) => area.value === field.value
-                                )?.label
-                              : "Select area")}
-                          {location && (
                             <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
-                          )}
-                        </Button>
-                      </FormControl>
-                    </DrawerTrigger>
-                    <DrawerContent>
-                      <div className="mt-4 border-t">
-                        <Command>
-                          <CommandInput placeholder="Search areas..." />
-                          <CommandList>
-                            <CommandEmpty>Area not found.</CommandEmpty>
-                            <CommandGroup>
-                              {location === "east marbella" &&
-                                eastMarbella.map((area) => (
-                                  <CommandItem
-                                    value={area.label}
-                                    key={area.value}
-                                    onSelect={() => {
-                                      form.setValue("area", area.value);
-                                      setOpenAreas(false);
-                                    }}
-                                  >
-                                    <Check
-                                      className={cn(
-                                        "mr-2 h-4 w-4",
-                                        area.value === field.value
-                                          ? "opacity-100"
-                                          : "opacity-0"
-                                      )}
-                                    />
-                                    {area.label}
-                                  </CommandItem>
-                                ))}
-                              {location === "marbella" &&
-                                marbella.map((area) => (
-                                  <CommandItem
-                                    value={area.label}
-                                    key={area.value}
-                                    onSelect={() => {
-                                      form.setValue("area", area.value);
-                                      setOpenAreas(false);
-                                    }}
-                                  >
-                                    <Check
-                                      className={cn(
-                                        "mr-2 h-4 w-4",
-                                        area.value === field.value
-                                          ? "opacity-100"
-                                          : "opacity-0"
-                                      )}
-                                    />
-                                    {area.label}
-                                  </CommandItem>
-                                ))}
-                              {location === "benahavis" &&
-                                benahavis.map((area) => (
-                                  <CommandItem
-                                    value={area.label}
-                                    key={area.value}
-                                    onSelect={() => {
-                                      form.setValue("area", area.value);
-                                      setOpenAreas(false);
-                                    }}
-                                  >
-                                    <Check
-                                      className={cn(
-                                        "mr-2 h-4 w-4",
-                                        area.value === field.value
-                                          ? "opacity-100"
-                                          : "opacity-0"
-                                      )}
-                                    />
-                                    {area.label}
-                                  </CommandItem>
-                                ))}
-                              {location === "estepona" &&
-                                estepona.map((area) => (
-                                  <CommandItem
-                                    value={area.label}
-                                    key={area.value}
-                                    onSelect={() => {
-                                      form.setValue("area", area.value);
-                                      setOpenAreas(false);
-                                    }}
-                                  >
-                                    <Check
-                                      className={cn(
-                                        "mr-2 h-4 w-4",
-                                        area.value === field.value
-                                          ? "opacity-100"
-                                          : "opacity-0"
-                                      )}
-                                    />
-                                    {area.label}
-                                  </CommandItem>
-                                ))}
-                            </CommandGroup>
-                          </CommandList>
-                        </Command>
-                      </div>
-                    </DrawerContent>
-                  </Drawer>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-
-            <FormField
-              control={form.control}
-              name="propertyType"
-              render={({ field }) => (
-                <FormItem className="flex flex-col">
-                  <FormLabel>Property Type</FormLabel>
-                  <Drawer
-                    open={openPropertyType}
-                    onOpenChange={setOpenPropertyType}
-                  >
-                    <DrawerTrigger asChild>
-                      <FormControl>
-                        <Button
-                          variant="outline"
-                          className={cn(
-                            "w-full justify-between",
-                            !field.value && "text-muted-foreground"
-                          )}
-                        >
-                          {field.value
-                            ? propertyTypes.find(
-                                (propertyType) =>
-                                  propertyType.value === field.value
-                              )?.label
-                            : "Select type"}
-                          <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
-                        </Button>
-                      </FormControl>
-                    </DrawerTrigger>
-                    <DrawerContent>
-                      <div className="mt-4 border-t">
-                        <Command>
-                          <CommandInput placeholder="Search property types..." />
-                          <CommandList>
-                            <CommandEmpty>No property type found.</CommandEmpty>
-                            <CommandGroup>
-                              {propertyTypes.map((propertyType) => (
-                                <CommandItem
-                                  value={propertyType.label}
-                                  key={propertyType.value}
-                                  onSelect={() => {
-                                    form.setValue(
-                                      "propertyType",
-                                      propertyType.value
-                                    );
-                                    setOpenPropertyType(false);
-                                  }}
-                                >
-                                  <Check
-                                    className={cn(
-                                      "mr-2 h-4 w-4",
-                                      propertyType.value === field.value
-                                        ? "opacity-100"
-                                        : "opacity-0"
-                                    )}
-                                  />
-                                  {propertyType.label}
-                                </CommandItem>
-                              ))}
-                            </CommandGroup>
-                          </CommandList>
-                        </Command>
-                      </div>
-                    </DrawerContent>
-                  </Drawer>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-          </div>
-
-          <div className="flex flex-col w-full gap-6">
-            <FormField
-              control={form.control}
-              name="bedrooms"
-              render={({ field }) => (
-                <FormItem className="flex flex-col">
-                  <FormLabel>Bedrooms</FormLabel>
-                  <Drawer open={openBedrooms} onOpenChange={setOpenBedrooms}>
-                    <DrawerTrigger asChild>
-                      <FormControl>
-                        <Button
-                          variant="outline"
-                          className={cn(
-                            "w-full justify-between",
-                            !field.value && "text-muted-foreground"
-                          )}
-                        >
-                          {field.value
-                            ? bedrooms.find(
-                                (bedroom) => bedroom.value === field.value
-                              )?.label
-                            : "Select bedrooms"}
-                          <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
-                        </Button>
-                      </FormControl>
-                    </DrawerTrigger>
-                    <DrawerContent>
-                      <div className="mt-4 border-t">
-                        <Command>
-                          <CommandInput placeholder="Search number of bedrooms..." />
-                          <CommandList>
-                            <CommandEmpty>
-                              Number of bedrooms not found.
-                            </CommandEmpty>
-                            <CommandGroup>
-                              {bedrooms.map((bedroom) => (
-                                <CommandItem
-                                  value={bedroom.label}
-                                  key={bedroom.value}
-                                  onSelect={() => {
-                                    form.setValue("bedrooms", bedroom.value);
-                                    setOpenBedrooms(false);
-                                  }}
-                                >
-                                  <Check
-                                    className={cn(
-                                      "mr-2 h-4 w-4",
-                                      bedroom.value === field.value
-                                        ? "opacity-100"
-                                        : "opacity-0"
-                                    )}
-                                  />
-                                  {bedroom.label}
-                                </CommandItem>
-                              ))}
-                            </CommandGroup>
-                          </CommandList>
-                        </Command>
-                      </div>
-                    </DrawerContent>
-                  </Drawer>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-
-            <FormField
-              control={form.control}
-              name="minPrice"
-              render={({ field }) => (
-                <FormItem className="flex flex-col">
-                  <FormLabel>Min Price</FormLabel>
-                  <Drawer open={openMinPrice} onOpenChange={setOpenMinPrice}>
-                    <DrawerTrigger asChild>
-                      <FormControl>
-                        <Button
-                          variant="outline"
-                          className={cn(
-                            "w-full justify-between",
-                            !field.value && "text-muted-foreground"
-                          )}
-                        >
-                          {field.value
-                            ? minPrice.find(
-                                (price) => price.value === field.value
-                              )?.label
-                            : "Select price"}
-                          <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
-                        </Button>
-                      </FormControl>
-                    </DrawerTrigger>
-                    <DrawerContent>
-                      <div className="mt-4 border-t">
-                        <Command>
-                          <CommandInput placeholder="Search price..." />
-                          <CommandList>
-                            <CommandEmpty>Price not found.</CommandEmpty>
-                            {!selectedMaxPrice ? (
+                          </Button>
+                        </FormControl>
+                      </DrawerTrigger>
+                      <DrawerContent>
+                        <div className="mt-4 border-t">
+                          <Command>
+                            <CommandInput placeholder="Search location..." />
+                            <CommandList>
+                              <CommandEmpty>Location not found.</CommandEmpty>
                               <CommandGroup>
-                                {minPrice.map((price) => (
+                                {locations.map((location) => (
                                   <CommandItem
-                                    value={price.label}
-                                    key={price.value}
+                                    value={location.label}
+                                    key={location.value}
                                     onSelect={() => {
-                                      form.setValue("minPrice", price.value);
-                                      setOpenMinPrice(false);
-                                      setSelectedMinPrice(price.value);
+                                      form.setValue("location", location.value);
+                                      setOpenLocation(false);
+                                      setLocation(location.value);
                                     }}
                                   >
                                     <Check
                                       className={cn(
                                         "mr-2 h-4 w-4",
-                                        price.value === field.value
+                                        location.value === field.value
                                           ? "opacity-100"
                                           : "opacity-0"
                                       )}
                                     />
-                                    {price.label}
+                                    {location.label}
                                   </CommandItem>
                                 ))}
                               </CommandGroup>
-                            ) : (
+                            </CommandList>
+                          </Command>
+                        </div>
+                      </DrawerContent>
+                    </Drawer>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+
+              <FormField
+                control={form.control}
+                name="area"
+                render={({ field }) => (
+                  <FormItem className="flex flex-col">
+                    <FormLabel>Area</FormLabel>
+                    <Drawer open={openAreas} onOpenChange={setOpenAreas}>
+                      <DrawerTrigger asChild>
+                        <FormControl>
+                          <Button
+                            variant="outline"
+                            className={cn(
+                              "w-full justify-between",
+                              !field.value && "text-muted-foreground"
+                            )}
+                            disabled={!location}
+                          >
+                            {location === "east marbella" &&
+                              (field.value
+                                ? eastMarbella.find(
+                                    (area) => area.value === field.value
+                                  )?.label
+                                : "Select area")}
+                            {location === "marbella" &&
+                              (field.value
+                                ? marbella.find(
+                                    (area) => area.value === field.value
+                                  )?.label
+                                : "Select area")}
+                            {location === "benahavis" &&
+                              (field.value
+                                ? benahavis.find(
+                                    (area) => area.value === field.value
+                                  )?.label
+                                : "Select area")}
+                            {location === "estepona" &&
+                              (field.value
+                                ? estepona.find(
+                                    (area) => area.value === field.value
+                                  )?.label
+                                : "Select area")}
+                            {location && (
+                              <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
+                            )}
+                          </Button>
+                        </FormControl>
+                      </DrawerTrigger>
+                      <DrawerContent>
+                        <div className="mt-4 border-t">
+                          <Command>
+                            <CommandInput placeholder="Search areas..." />
+                            <CommandList>
+                              <CommandEmpty>Area not found.</CommandEmpty>
                               <CommandGroup>
-                                {minPrice.map(
+                                {location === "east marbella" &&
+                                  eastMarbella.map((area) => (
+                                    <CommandItem
+                                      value={area.label}
+                                      key={area.value}
+                                      onSelect={() => {
+                                        form.setValue("area", area.value);
+                                        setOpenAreas(false);
+                                      }}
+                                    >
+                                      <Check
+                                        className={cn(
+                                          "mr-2 h-4 w-4",
+                                          area.value === field.value
+                                            ? "opacity-100"
+                                            : "opacity-0"
+                                        )}
+                                      />
+                                      {area.label}
+                                    </CommandItem>
+                                  ))}
+                                {location === "marbella" &&
+                                  marbella.map((area) => (
+                                    <CommandItem
+                                      value={area.label}
+                                      key={area.value}
+                                      onSelect={() => {
+                                        form.setValue("area", area.value);
+                                        setOpenAreas(false);
+                                      }}
+                                    >
+                                      <Check
+                                        className={cn(
+                                          "mr-2 h-4 w-4",
+                                          area.value === field.value
+                                            ? "opacity-100"
+                                            : "opacity-0"
+                                        )}
+                                      />
+                                      {area.label}
+                                    </CommandItem>
+                                  ))}
+                                {location === "benahavis" &&
+                                  benahavis.map((area) => (
+                                    <CommandItem
+                                      value={area.label}
+                                      key={area.value}
+                                      onSelect={() => {
+                                        form.setValue("area", area.value);
+                                        setOpenAreas(false);
+                                      }}
+                                    >
+                                      <Check
+                                        className={cn(
+                                          "mr-2 h-4 w-4",
+                                          area.value === field.value
+                                            ? "opacity-100"
+                                            : "opacity-0"
+                                        )}
+                                      />
+                                      {area.label}
+                                    </CommandItem>
+                                  ))}
+                                {location === "estepona" &&
+                                  estepona.map((area) => (
+                                    <CommandItem
+                                      value={area.label}
+                                      key={area.value}
+                                      onSelect={() => {
+                                        form.setValue("area", area.value);
+                                        setOpenAreas(false);
+                                      }}
+                                    >
+                                      <Check
+                                        className={cn(
+                                          "mr-2 h-4 w-4",
+                                          area.value === field.value
+                                            ? "opacity-100"
+                                            : "opacity-0"
+                                        )}
+                                      />
+                                      {area.label}
+                                    </CommandItem>
+                                  ))}
+                              </CommandGroup>
+                            </CommandList>
+                          </Command>
+                        </div>
+                      </DrawerContent>
+                    </Drawer>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+
+              <FormField
+                control={form.control}
+                name="propertyType"
+                render={({ field }) => (
+                  <FormItem className="flex flex-col">
+                    <FormLabel>Property Type</FormLabel>
+                    <Drawer
+                      open={openPropertyType}
+                      onOpenChange={setOpenPropertyType}
+                    >
+                      <DrawerTrigger asChild>
+                        <FormControl>
+                          <Button
+                            variant="outline"
+                            className={cn(
+                              "w-full justify-between",
+                              !field.value && "text-muted-foreground"
+                            )}
+                          >
+                            {field.value
+                              ? propertyTypes.find(
+                                  (propertyType) =>
+                                    propertyType.value === field.value
+                                )?.label
+                              : "Select type"}
+                            <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
+                          </Button>
+                        </FormControl>
+                      </DrawerTrigger>
+                      <DrawerContent>
+                        <div className="mt-4 border-t">
+                          <Command>
+                            <CommandInput placeholder="Search property types..." />
+                            <CommandList>
+                              <CommandEmpty>
+                                No property type found.
+                              </CommandEmpty>
+                              <CommandGroup>
+                                {propertyTypes.map((propertyType) => (
+                                  <CommandItem
+                                    value={propertyType.label}
+                                    key={propertyType.value}
+                                    onSelect={() => {
+                                      form.setValue(
+                                        "propertyType",
+                                        propertyType.value
+                                      );
+                                      setOpenPropertyType(false);
+                                    }}
+                                  >
+                                    <Check
+                                      className={cn(
+                                        "mr-2 h-4 w-4",
+                                        propertyType.value === field.value
+                                          ? "opacity-100"
+                                          : "opacity-0"
+                                      )}
+                                    />
+                                    {propertyType.label}
+                                  </CommandItem>
+                                ))}
+                              </CommandGroup>
+                            </CommandList>
+                          </Command>
+                        </div>
+                      </DrawerContent>
+                    </Drawer>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+            </div>
+
+            <div className="flex flex-col w-full gap-6">
+              <FormField
+                control={form.control}
+                name="bedrooms"
+                render={({ field }) => (
+                  <FormItem className="flex flex-col">
+                    <FormLabel>Bedrooms</FormLabel>
+                    <Drawer open={openBedrooms} onOpenChange={setOpenBedrooms}>
+                      <DrawerTrigger asChild>
+                        <FormControl>
+                          <Button
+                            variant="outline"
+                            className={cn(
+                              "w-full justify-between",
+                              !field.value && "text-muted-foreground"
+                            )}
+                          >
+                            {field.value
+                              ? bedrooms.find(
+                                  (bedroom) => bedroom.value === field.value
+                                )?.label
+                              : "Select bedrooms"}
+                            <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
+                          </Button>
+                        </FormControl>
+                      </DrawerTrigger>
+                      <DrawerContent>
+                        <div className="mt-4 border-t">
+                          <Command>
+                            <CommandInput placeholder="Search number of bedrooms..." />
+                            <CommandList>
+                              <CommandEmpty>
+                                Number of bedrooms not found.
+                              </CommandEmpty>
+                              <CommandGroup>
+                                {bedrooms.map((bedroom) => (
+                                  <CommandItem
+                                    value={bedroom.label}
+                                    key={bedroom.value}
+                                    onSelect={() => {
+                                      form.setValue("bedrooms", bedroom.value);
+                                      setOpenBedrooms(false);
+                                    }}
+                                  >
+                                    <Check
+                                      className={cn(
+                                        "mr-2 h-4 w-4",
+                                        bedroom.value === field.value
+                                          ? "opacity-100"
+                                          : "opacity-0"
+                                      )}
+                                    />
+                                    {bedroom.label}
+                                  </CommandItem>
+                                ))}
+                              </CommandGroup>
+                            </CommandList>
+                          </Command>
+                        </div>
+                      </DrawerContent>
+                    </Drawer>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+
+              <FormField
+                control={form.control}
+                name="minPrice"
+                render={({ field }) => (
+                  <FormItem className="flex flex-col">
+                    <FormLabel>Min Price</FormLabel>
+                    <Drawer open={openMinPrice} onOpenChange={setOpenMinPrice}>
+                      <DrawerTrigger asChild>
+                        <FormControl>
+                          <Button
+                            variant="outline"
+                            className={cn(
+                              "w-full justify-between",
+                              !field.value && "text-muted-foreground"
+                            )}
+                          >
+                            {field.value
+                              ? minPrice.find(
+                                  (price) => price.value === field.value
+                                )?.label
+                              : "Select price"}
+                            <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
+                          </Button>
+                        </FormControl>
+                      </DrawerTrigger>
+                      <DrawerContent>
+                        <div className="mt-4 border-t">
+                          <Command>
+                            <CommandInput placeholder="Search price..." />
+                            <CommandList>
+                              <CommandEmpty>Price not found.</CommandEmpty>
+                              {!selectedMaxPrice ? (
+                                <CommandGroup>
+                                  {minPrice.map((price) => (
+                                    <CommandItem
+                                      value={price.label}
+                                      key={price.value}
+                                      onSelect={() => {
+                                        form.setValue("minPrice", price.value);
+                                        setOpenMinPrice(false);
+                                        setSelectedMinPrice(price.value);
+                                      }}
+                                    >
+                                      <Check
+                                        className={cn(
+                                          "mr-2 h-4 w-4",
+                                          price.value === field.value
+                                            ? "opacity-100"
+                                            : "opacity-0"
+                                        )}
+                                      />
+                                      {price.label}
+                                    </CommandItem>
+                                  ))}
+                                </CommandGroup>
+                              ) : (
+                                <CommandGroup>
+                                  {minPrice.map(
+                                    (price) =>
+                                      Number(price.value) <=
+                                        Number(selectedMaxPrice) && (
+                                        <CommandItem
+                                          value={price.label}
+                                          key={price.value}
+                                          onSelect={() => {
+                                            form.setValue(
+                                              "minPrice",
+                                              price.value
+                                            );
+                                            setOpenMinPrice(false);
+                                            setSelectedMinPrice(price.value);
+                                          }}
+                                        >
+                                          <Check
+                                            className={cn(
+                                              "mr-2 h-4 w-4",
+                                              price.value === field.value
+                                                ? "opacity-100"
+                                                : "opacity-0"
+                                            )}
+                                          />
+                                          {price.label}
+                                        </CommandItem>
+                                      )
+                                  )}
+                                </CommandGroup>
+                              )}
+                            </CommandList>
+                          </Command>
+                        </div>
+                      </DrawerContent>
+                    </Drawer>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+
+              <FormField
+                control={form.control}
+                name="maxPrice"
+                render={({ field }) => (
+                  <FormItem className="flex flex-col">
+                    <FormLabel>Max Price</FormLabel>
+                    <Drawer open={openMaxPrice} onOpenChange={setOpenMaxPrice}>
+                      <DrawerTrigger asChild>
+                        <FormControl>
+                          <Button
+                            variant="outline"
+                            className={cn(
+                              "w-full justify-between",
+                              !field.value && "text-muted-foreground"
+                            )}
+                          >
+                            {field.value
+                              ? maxPrice.find(
+                                  (price) => price.value === field.value
+                                )?.label
+                              : "Select price"}
+                            <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
+                          </Button>
+                        </FormControl>
+                      </DrawerTrigger>
+                      <DrawerContent>
+                        <div className="mt-4 border-t">
+                          <Command>
+                            <CommandInput placeholder="Search price..." />
+                            <CommandList>
+                              <CommandEmpty>Price not found.</CommandEmpty>
+                              <CommandGroup>
+                                {maxPrice.map(
                                   (price) =>
-                                    Number(price.value) <=
-                                      Number(selectedMaxPrice) && (
+                                    Number(selectedMinPrice) <=
+                                      Number(price.value) && (
                                       <CommandItem
                                         value={price.label}
                                         key={price.value}
                                         onSelect={() => {
                                           form.setValue(
-                                            "minPrice",
+                                            "maxPrice",
                                             price.value
                                           );
-                                          setOpenMinPrice(false);
-                                          setSelectedMinPrice(price.value);
+                                          setOpenMaxPrice(false);
+                                          setSelectedMaxPrice(price.value);
                                         }}
                                       >
                                         <Check
@@ -840,89 +912,21 @@ function PropertySearch(): JSX.Element {
                                     )
                                 )}
                               </CommandGroup>
-                            )}
-                          </CommandList>
-                        </Command>
-                      </div>
-                    </DrawerContent>
-                  </Drawer>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-
-            <FormField
-              control={form.control}
-              name="maxPrice"
-              render={({ field }) => (
-                <FormItem className="flex flex-col">
-                  <FormLabel>Max Price</FormLabel>
-                  <Drawer open={openMaxPrice} onOpenChange={setOpenMaxPrice}>
-                    <DrawerTrigger asChild>
-                      <FormControl>
-                        <Button
-                          variant="outline"
-                          className={cn(
-                            "w-full justify-between",
-                            !field.value && "text-muted-foreground"
-                          )}
-                        >
-                          {field.value
-                            ? maxPrice.find(
-                                (price) => price.value === field.value
-                              )?.label
-                            : "Select price"}
-                          <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
-                        </Button>
-                      </FormControl>
-                    </DrawerTrigger>
-                    <DrawerContent>
-                      <div className="mt-4 border-t">
-                        <Command>
-                          <CommandInput placeholder="Search price..." />
-                          <CommandList>
-                            <CommandEmpty>Price not found.</CommandEmpty>
-                            <CommandGroup>
-                              {maxPrice.map(
-                                (price) =>
-                                  Number(selectedMinPrice) <=
-                                    Number(price.value) && (
-                                    <CommandItem
-                                      value={price.label}
-                                      key={price.value}
-                                      onSelect={() => {
-                                        form.setValue("maxPrice", price.value);
-                                        setOpenMaxPrice(false);
-                                        setSelectedMaxPrice(price.value);
-                                      }}
-                                    >
-                                      <Check
-                                        className={cn(
-                                          "mr-2 h-4 w-4",
-                                          price.value === field.value
-                                            ? "opacity-100"
-                                            : "opacity-0"
-                                        )}
-                                      />
-                                      {price.label}
-                                    </CommandItem>
-                                  )
-                              )}
-                            </CommandGroup>
-                          </CommandList>
-                        </Command>
-                      </div>
-                    </DrawerContent>
-                  </Drawer>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
+                            </CommandList>
+                          </Command>
+                        </div>
+                      </DrawerContent>
+                    </Drawer>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+            </div>
           </div>
 
-          {/* <div className="flex justify-end">
+          <div className="flex justify-end px-6">
             <Button type="submit">Search</Button>
-          </div> */}
+          </div>
         </form>
       </Form>
     </div>

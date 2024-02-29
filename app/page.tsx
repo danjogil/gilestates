@@ -63,7 +63,7 @@ export default function Home() {
 
       <div className="px-4 md:py-4 flex gap-6 justify-center mt-10 md:w-full items-center">
         <div className="hidden md:block md:border-t-2 md:border-black md:grow md:ml-10"></div>
-        <h2 className="uppercase text-xl font-semibold sm:text-2xl md:text-3xl border-b-2 md:border-b-0 border-black text-center">
+        <h2 className="uppercase text-xl font-semibold sm:text-2xl md:text-3xl border-b-2 md:border-b-0 border-black text-center grow md:[flex-grow:0] mx-4">
           Latest listings
         </h2>
         <div className="hidden md:block md:border-t-2 md:border-black md:grow md:mr-10"></div>
@@ -137,7 +137,7 @@ export default function Home() {
 
       <div className="px-4 md:py-4 flex gap-6 justify-center mt-10 md:w-full items-center">
         <div className="hidden md:block md:border-t-2 md:border-black md:grow md:ml-10"></div>
-        <h2 className="uppercase text-xl font-semibold sm:text-2xl md:text-3xl border-b-2 md:border-b-0 border-black text-center">
+        <h2 className="uppercase text-xl font-semibold sm:text-2xl md:text-3xl border-b-2 md:border-b-0 border-black text-center grow md:[flex-grow:0] mx-4">
           Our properties
         </h2>
         <div className="hidden md:block md:border-t-2 md:border-black md:grow md:mr-10"></div>

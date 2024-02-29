@@ -641,7 +641,7 @@ function PropertySearch(): JSX.Element {
                                 (propertyType) =>
                                   propertyType.value === field.value
                               )?.label
-                            : "Select property type"}
+                            : "Select type"}
                           <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
                         </Button>
                       </FormControl>
@@ -709,7 +709,7 @@ function PropertySearch(): JSX.Element {
                             ? bedrooms.find(
                                 (bedroom) => bedroom.value === field.value
                               )?.label
-                            : "Select minimum bedrooms"}
+                            : "Select bedrooms"}
                           <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
                         </Button>
                       </FormControl>
@@ -774,7 +774,7 @@ function PropertySearch(): JSX.Element {
                             ? minPrice.find(
                                 (price) => price.value === field.value
                               )?.label
-                            : "Select minimum price"}
+                            : "Select price"}
                           <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
                         </Button>
                       </FormControl>
@@ -871,7 +871,7 @@ function PropertySearch(): JSX.Element {
                             ? maxPrice.find(
                                 (price) => price.value === field.value
                               )?.label
-                            : "Select maximum price"}
+                            : "Select price"}
                           <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
                         </Button>
                       </FormControl>

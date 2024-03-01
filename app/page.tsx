@@ -3,7 +3,7 @@
 import PropertySearch from "@/components/PropertySearch";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
-import { useRef } from "react";
+import { Suspense, useRef } from "react";
 
 export default function Home() {
   const targetRef = useRef<HTMLDivElement>(null);
@@ -58,7 +58,9 @@ export default function Home() {
       </div>
 
       <div ref={targetRef} id="targetElement">
-        <PropertySearch />
+        <Suspense fallback={<p>Looooooading....</p>}>
+          <PropertySearch />
+        </Suspense>
       </div>
 
       <div className="px-4 md:py-4 flex gap-6 justify-center mt-10 md:w-full items-center">

@@ -1,3 +1,5 @@
+"use client";
+
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
@@ -28,6 +30,7 @@ import { useState } from "react";
 
 import { Check, ChevronsUpDown } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
 type Price = {
   value: string;
@@ -368,6 +371,11 @@ const formSchema = z.object({
 });
 
 function PropertySearch(): JSX.Element {
+  const router = useRouter();
+  const { replace } = useRouter();
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -381,7 +389,18 @@ function PropertySearch(): JSX.Element {
   });
 
   function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values);
+    const params = new URLSearchParams(searchParams);
+    params.set("area", values.area);
+    params.set("propertyType", values.propertyType);
+    params.set("bedrooms", values.bedrooms);
+    params.set("minPrice", values.minPrice);
+    params.set("maxPrice", values.maxPrice);
+
+    if (pathname !== "/properties") {
+      router.push(`/properties?${params.toString()}`);
+    } else {
+      replace(`${pathname}?${params.toString()}`);
+    }
   }
 
   const [openLocation, setOpenLocation] = useState(false);

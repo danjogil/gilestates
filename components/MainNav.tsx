@@ -30,12 +30,23 @@ import { HamburgerMenuIcon } from "@radix-ui/react-icons";
 import { cn } from "@/lib/utils";
 import { ScrollArea } from "./ui/scroll-area";
 import Link from "next/link";
-import Image from "next/image";
+import { usePathname } from "next/navigation";
+import clsx from "clsx";
 
 export function MainNav({ children }: { children: React.ReactNode }) {
+  const pathname = usePathname();
+
   return (
     <>
-      <nav className="flex justify-end pr-10 md:border-b fixed top-0 z-50 w-full bg-white">
+      <nav
+        className={clsx(
+          "flex justify-end pr-10 md:border-b top-0 z-50 w-full bg-white",
+          {
+            ["fixed"]: pathname === "/",
+            ["sticky"]: pathname !== "/",
+          }
+        )}
+      >
         <NavigationMenu className="hidden md:block p-4">
           <NavigationMenuList>
             <NavigationMenuItem asChild>
@@ -166,7 +177,12 @@ export function MainNav({ children }: { children: React.ReactNode }) {
         </NavigationMenu>
       </nav>
 
-      <nav className="fixed top-0 z-50 w-full">
+      <nav
+        className={clsx("top-0 z-50 w-full", {
+          ["fixed"]: pathname === "/",
+          ["sticky"]: pathname !== "/",
+        })}
+      >
         <Sheet>
           <div className="flex justify-end p-4 md:hidden border-b bg-white">
             <SheetTrigger>

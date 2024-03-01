@@ -189,7 +189,7 @@ export default function Home() {
         <h2 className="uppercase font-semibold text-xl sm:text-2xl md:text-3xl pb-4">
           About us
         </h2>
-        <div className="pt-4 px-4 flex flex-col gap-4">
+        <div className="py-4 px-4 flex flex-col gap-4">
           <p className="text-md">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur
             molestiae numquam dignissimos facilis commodi ipsa consequuntur

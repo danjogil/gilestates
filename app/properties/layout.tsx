@@ -1,5 +1,3 @@
-"use client";
-
 import PropertySearch from "@/components/PropertySearch";
 import { Suspense } from "react";
 

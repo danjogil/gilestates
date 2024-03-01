@@ -1,6 +1,7 @@
 "use client";
 
 import PropertySearch from "@/components/PropertySearch";
+import { Suspense } from "react";
 
 function Layout({ children }: { children: React.ReactNode }) {
   return (
@@ -10,7 +11,9 @@ function Layout({ children }: { children: React.ReactNode }) {
           Properties
         </h2>
       </div>
-      <PropertySearch />
+      <Suspense fallback={<p>Looooooading....</p>}>
+        <PropertySearch />
+      </Suspense>
       <div>{children}</div>
     </div>
   );

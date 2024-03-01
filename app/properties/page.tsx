@@ -1,5 +1,4 @@
 import Property from "@/components/Property";
-import { Suspense } from "react";
 
 async function Page({
   searchParams,
@@ -22,15 +21,14 @@ async function Page({
     <main className="mt-10">
       <div className="flex flex-wrap gap-8 md:gap-20 justify-center">
         {properties?.Property?.map((item: Record<string, any>) => (
-          <Suspense key={item.Reference} fallback={<p>Looooooading....</p>}>
-            <Property
-              location={item.Location}
-              price={item.Price}
-              bedrooms={item.Bedrooms}
-              bathrooms={item.Bathrooms}
-              mainImage={item?.Pictures?.Picture[0]?.PictureURL}
-            />
-          </Suspense>
+          <Property
+            key={item.Reference}
+            location={item.Location}
+            price={item.Price}
+            bedrooms={item.Bedrooms}
+            bathrooms={item.Bathrooms}
+            mainImage={item?.Pictures?.Picture[0]?.PictureURL}
+          />
         ))}
       </div>
     </main>

@@ -11,8 +11,14 @@ async function Page({
     maxPrice?: string;
   };
 }) {
+  // const properties = await fetch(
+  //   `https://webapi.resales-online.com/V6/SearchProperties?p_agency_filterid=1&p1=1018186&p2=a6f757f38647f9fed6a748b29c64012a242cae1b&P_sandbox=true&P_Location=${searchParams?.area}&P_PropertyTypes=${searchParams?.propertyType}&P_Beds=${searchParams?.bedrooms}&P_Min=${searchParams?.minPrice}&P_Max=${searchParams?.maxPrice}`
+  // )
+  //   .then((res) => res.json())
+  //   .then((data) => data as any);
+
   const properties = await fetch(
-    `https://webapi.resales-online.com/V6/SearchProperties?p_agency_filterid=1&p1=1018186&p2=a6f757f38647f9fed6a748b29c64012a242cae1b&P_sandbox=true&P_Location=${searchParams?.area}&P_PropertyTypes=${searchParams?.propertyType}&P_Beds=${searchParams?.bedrooms}&P_Min=${searchParams?.minPrice}&P_Max=${searchParams?.maxPrice}`
+    `https://webapi.resales-online.com/V6/SearchProperties?p_agency_filterid=1&p1=1018186&p2= 5a017b4080bd1e23e5806657f0168d7abc1f6be2&P_sandbox=true&P_Location=${searchParams?.area}&P_PropertyTypes=${searchParams?.propertyType}&P_Beds=${searchParams?.bedrooms}&P_Min=${searchParams?.minPrice}&P_Max=${searchParams?.maxPrice}`
   )
     .then((res) => res.json())
     .then((data) => data as any);

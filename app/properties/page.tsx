@@ -14,12 +14,6 @@ function Page({
     maxPrice?: string;
   };
 }) {
-  // const properties = await fetch(
-  //   `https://quiet-earth-83836-d3ae8f1c6d7f.herokuapp.com/https://webapi.resales-online.com/V6/SearchProperties?p_agency_filterid=1&p1=1018186&p2=a6f757f38647f9fed6a748b29c64012a242cae1b&P_sandbox=true&P_Location=${searchParams?.area}&P_PropertyTypes=${searchParams?.propertyType}&P_Beds=${searchParams?.bedrooms}&P_Min=${searchParams?.minPrice}&P_Max=${searchParams?.maxPrice}`
-  // )
-  //   .then((res) => res.json())
-  //   .then((data) => data as any);
-
   const [properties, setProperties] = useState<any>({});
 
   useEffect(
@@ -30,6 +24,7 @@ function Page({
             `https://quiet-earth-83836-d3ae8f1c6d7f.herokuapp.com/https://webapi.resales-online.com/V6/SearchProperties?p_agency_filterid=1&p1=1018186&p2=a6f757f38647f9fed6a748b29c64012a242cae1b&P_sandbox=true&P_Location=${searchParams?.area}&P_PropertyTypes=${searchParams?.propertyType}&P_Beds=${searchParams?.bedrooms}&P_Min=${searchParams?.minPrice}&P_Max=${searchParams?.maxPrice}`
           );
           const data = await res.json();
+          console.log(data);
           setProperties(data);
         } catch {
           console.log("oops");

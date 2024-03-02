@@ -11,7 +11,7 @@ function Page({ params }: { params?: { id: string } }) {
       async function getProperty() {
         try {
           const res = await axios.get(
-            `https://quiet-earth-83836-d3ae8f1c6d7f.herokuapp.com/https://webapi.resales-online.com/V6/SearchProperties?p_agency_filterid=1&p1=1018186&p2=a6f757f38647f9fed6a748b29c64012a242cae1b&P_sandbox=true&P_RefId=${params?.id}`
+            `https://quiet-earth-83836-d3ae8f1c6d7f.herokuapp.com/https://webapi.resales-online.com/V6/SearchProperties?p_agency_filterid=1&p1=1018186&p2=057d095bc4e7c27c3de591fbd536f405f091bbeb&P_sandbox=true&P_RefId=${params?.id}`
           );
 
           const data = res.data || [];

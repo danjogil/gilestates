@@ -3,22 +3,22 @@
 import PropertySearch from "@/components/PropertySearch";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
-import { Suspense, useRef } from "react";
+import { Suspense } from "react";
 
 export default function Home() {
-  const targetRef = useRef<HTMLDivElement>(null);
+  // const targetRef = useRef<HTMLDivElement>(null);
 
-  // function scrollToTargetAdjusted() {
-  //   let element = document.getElementById("targetElement");
-  //   let headerOffset = 100;
-  //   let elementPosition = element!.getBoundingClientRect().top;
-  //   let offsetPosition = elementPosition + window.scrollY - headerOffset;
+  function scrollToTargetAdjusted() {
+    let element = document.getElementById("targetElement");
+    let headerOffset = 100;
+    let elementPosition = element!.getBoundingClientRect().top;
+    let offsetPosition = elementPosition + window.scrollY - headerOffset;
 
-  //   window.scrollTo({
-  //     top: offsetPosition,
-  //     behavior: "smooth",
-  //   });
-  // }
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: "smooth",
+    });
+  }
 
   return (
     <main className="min-h-screen">
@@ -43,21 +43,21 @@ export default function Home() {
         </div>
 
         <Button
-          onClick={() =>
-            targetRef.current?.scrollIntoView({
-              behavior: "smooth",
-              block: "center",
-            })
-          }
+          // onClick={() =>
+          //   targetRef.current?.scrollIntoView({
+          //     behavior: "smooth",
+          //     block: "center",
+          //   })
+          // }
           className="z-10 md:p-6 md:text-lg shadow-md uppercase cursor-pointer"
           variant="secondary"
-          // onClick={scrollToTargetAdjusted}
+          onClick={scrollToTargetAdjusted}
         >
           Start your search
         </Button>
       </div>
 
-      <div ref={targetRef} id="targetElement">
+      <div id="targetElement">
         <Suspense fallback={<p>Looooooading....</p>}>
           <PropertySearch />
         </Suspense>

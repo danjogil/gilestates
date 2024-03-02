@@ -26,7 +26,6 @@ function Page({
           );
 
           const data = res.data || [];
-          console.log(data);
           setProperties(data);
         } catch {
           console.log("oops");
@@ -45,7 +44,7 @@ function Page({
 
   return (
     <main className="my-10">
-      <div className="flex flex-wrap gap-8 md:gap-20 justify-center">
+      <div className="flex flex-wrap gap-8 md:gap-10 justify-center">
         {properties?.Property?.map((item: Record<string, any>) => (
           <Property
             key={item.Reference}

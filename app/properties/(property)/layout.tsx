@@ -1,7 +1,7 @@
 function Layout({ children }: { children: React.ReactNode }) {
   return (
     <div>
-      <p>hi there</p>
+      <p>layout</p>
       {children}
     </div>
   );
